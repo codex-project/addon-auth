@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="v2.8.5">
+  <partials/>
+  <file path="AuthHookServiceProvider.php" generated-path="AuthHookServiceProvider.html" hash="74988f8be93d79fea47868baf02e1b00" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="ServiceProvider">\Sebwite\Support\ServiceProvider</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\AuthHook" line="15" package="Codex\AuthHook">
+      <extends>\Sebwite\Support\ServiceProvider</extends>
+      <name>AuthHookServiceProvider</name>
+      <full_name>\Codex\AuthHook\AuthHookServiceProvider</full_name>
+      <docblock line="15">
+        <description>The main service provider</description>
+        <long-description></long-description>
+        <tag name="author" line="15" description="Sebwite"/>
+        <tag name="copyright" line="15" description="Copyright (c) 2015, Sebwite"/>
+        <tag name="license" line="15" description="MIT" link="https://tldrlegal.com/license/mit-license"/>
+        <tag name="package" line="15" description="Codex\AuthHook"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook" line="17" package="Codex\AuthHook">
+        <name>$dir</name>
+        <full_name>\Codex\AuthHook\AuthHookServiceProvider::dir</full_name>
+        <default>__DIR__</default>
+        <docblock line="17">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook" line="19" package="Codex\AuthHook">
+        <name>$configFiles</name>
+        <full_name>\Codex\AuthHook\AuthHookServiceProvider::configFiles</full_name>
+        <default>array('codex.auth-hook')</default>
+        <docblock line="19">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook" line="21" package="Codex\AuthHook">
+        <name>$providers</name>
+        <full_name>\Codex\AuthHook\AuthHookServiceProvider::providers</full_name>
+        <default>array(\Codex\AuthHook\Providers\ConsoleServiceProvider::class)</default>
+        <docblock line="21">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\AuthHook" line="27" package="Codex\AuthHook">
+        <name>boot</name>
+        <full_name>\Codex\AuthHook\AuthHookServiceProvider::boot()</full_name>
+        <docblock line="27">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\AuthHook" line="35" package="Codex\AuthHook">
+        <name>register</name>
+        <full_name>\Codex\AuthHook\AuthHookServiceProvider::register()</full_name>
+        <docblock line="35">
+          <description>{@inheritdoc}</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="17" code="PPC:ERR-50007">No summary for property $dir</error>
+      <error line="19" code="PPC:ERR-50007">No summary for property $configFiles</error>
+      <error line="21" code="PPC:ERR-50007">No summary for property $providers</error>
+    </parse_markers>
+    <source>eJydUc1LwzAUv+eveIfBtuJWFbxUxYki7iCI281KydK3NqxNQpLOydj/btIPdfUgmEvCe7/3+3i5ulG5IkTQEo2iDOFOpriLbyubP0q5uSSkMggLXL1zi/GiUkpqGy9QbznDZy23PEXtUGEQkACWOUJJuQDTAEC1COK7M+pYpYb2tKS+waT60DzLLTj97jliYzg/Pbs4+YksHKtwjuqTW6tMFIa2SHWBGS2mTJZhCwlLbicd/Gm+9NMu4YZm7fRxUhKEhBXUGOgqvZCAO4siNdCrkz3xbC6pRWYxhUHKNVxDktzPX5LE7abXZlKsefbACzQO9gpD5o1M/XImudMdwtvvoW6R9QjpVhgfZ4g7T8Y1hJEF9rxGUR2xnnci/vIfV3MFsJ9xkaPmNpXs0BbDxki1cpuEdSWY5VLASko7Gtet/ZeZAVXKuVNUo7BR1GAakQP5v5bGjBuL+i+9b1yneSCfNF3iTQ==</source>
+  </file>
+  <file path="Providers/ConsoleServiceProvider.php" generated-path="Providers.ConsoleServiceProvider.html" hash="5035d9da9510dbeeef34e6cccbe519ea" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="BaseConsoleProvider">\Sebwite\Support\ConsoleServiceProvider</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\AuthHook\Providers" line="15" package="Codex\AuthHook">
+      <extends>\Sebwite\Support\ConsoleServiceProvider</extends>
+      <name>ConsoleServiceProvider</name>
+      <full_name>\Codex\AuthHook\Providers\ConsoleServiceProvider</full_name>
+      <docblock line="15">
+        <description>This is the ConsoleServiceProvider.</description>
+        <long-description></long-description>
+        <tag name="author" line="15" description="Sebwite"/>
+        <tag name="copyright" line="15" description="Copyright (c) 2015, Sebwite"/>
+        <tag name="license" line="15" description="MIT" link="https://tldrlegal.com/license/mit-license"/>
+        <tag name="package" line="15" description="Codex\AuthHook"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook\Providers" line="20" package="Codex\AuthHook">
+        <name>$namespace</name>
+        <full_name>\Codex\AuthHook\Providers\ConsoleServiceProvider::namespace</full_name>
+        <default>'Codex\\AuthHook\\Console'</default>
+        <docblock line="20">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="20" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook\Providers" line="25" package="Codex\AuthHook">
+        <name>$prefix</name>
+        <full_name>\Codex\AuthHook\Providers\ConsoleServiceProvider::prefix</full_name>
+        <default>'codex.auth-hook.commands.'</default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="25" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook\Providers" line="30" package="Codex\AuthHook">
+        <name>$commands</name>
+        <full_name>\Codex\AuthHook\Providers\ConsoleServiceProvider::commands</full_name>
+        <default>array('test' =&gt; 'AuthHookTest')</default>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="30" description="" type="array" variable="">
+            <type>array</type>
+          </tag>
+        </docblock>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="20" code="PPC:ERR-50007">No summary for property $namespace</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $prefix</error>
+      <error line="30" code="PPC:ERR-50007">No summary for property $commands</error>
+    </parse_markers>
+    <source>eJydkU1PwzAMhu/5FTkgFSrWABIXxvjaBQ5ISNtt5RBS00RrmyjxxibEf8cpjQbSdiGq1Mh5/dh+fX3rtGOsky0EJxXwqa1gU96vUD9auyxfvF2bCnwYM7YKwGfw9mEQytnKOeuxnNou2AZm4NdGQVJzGfiDDDC8pjAxRJ6znM+1CZw+1LHgPkLBou5OUh/W8+EMxeODsm7rTa2REyBdj9UJvzg7vzz9rWyI2lHn/dGILlwJgU3lG6hlUyjbikEiWoOjJH9+msds8mQp6yH7rzcsF0w1MoQDI3DYIHTVXifYJ4vA6EZPpkprSXMG9Karh5jo/85bBIVQ8aPdliY8+2lmt6m0ioxc/gfbeXg3mwhWEVxE50eawNGhVtIcxUGy9F5uD4FTOqEXLG0yQwiY0WVyw7M0wjzGesnrmH2xby4+ztQ=</source>
+  </file>
+  <file path="Console/AuthHookTestCommand.php" generated-path="Console.AuthHookTestCommand.html" hash="a190bb8267a92fd9b32a9f013ee44821" package="Default">
+    <docblock line="0">
+      <description></description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Command">\Sebwite\Support\Command</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\AuthHook\Console" line="7" package="Default">
+      <extends>\Sebwite\Support\Command</extends>
+      <name>AuthHookTestCommand</name>
+      <full_name>\Codex\AuthHook\Console\AuthHookTestCommand</full_name>
+      <docblock line="7">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="7" description="Default"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook\Console" line="14" package="Default">
+        <name>$signature</name>
+        <full_name>\Codex\AuthHook\Console\AuthHookTestCommand::signature</full_name>
+        <default>'auth-hook:test'</default>
+        <docblock line="14">
+          <description>The name and signature of the console command.</description>
+          <long-description></long-description>
+          <tag name="var" line="14" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\AuthHook\Console" line="21" package="Default">
+        <name>$description</name>
+        <full_name>\Codex\AuthHook\Console\AuthHookTestCommand::description</full_name>
+        <default>'auth-hook test command'</default>
+        <docblock line="21">
+          <description>The console command description.</description>
+          <long-description></long-description>
+          <tag name="var" line="21" description="" type="string" variable="">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\AuthHook\Console" line="28" package="Default">
+        <name>handle</name>
+        <full_name>\Codex\AuthHook\Console\AuthHookTestCommand::handle()</full_name>
+        <docblock line="28">
+          <description>Execute the console command.</description>
+          <long-description></long-description>
+          <tag name="return" line="28" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
+      <error line="7" code="PPC:ERR-50005">No summary for class \Codex\AuthHook\Console\AuthHookTestCommand</error>
+    </parse_markers>
+    <source>eJydkT9vwyAQxXc+xQ2RnFhKszf9q6hS92T0QuASUG1AcLSWqnz3nomtNlWGqrec4PF4P7i7x2CCEE52mIJUCBuvsW+eM5lX79+ajXfJt7gWIieELe4/LGGzzSH4SKx2nXSaVdXKlGCy7TDRqAH2hE4nGNfiUwDXqq5Lhxp2BmHIh+F0skcnKUcEfwBiRZ0BuBf7zeiazE/vMgIkitYdx71V6SF6QkWoYfZ95z1UkhGXhhlviSErRr+C8ysUNCYVbSDr3X8AftgvEGBAmEKuoLz0qDLhn/4hIr/QAXS2R30JkvetVXDIThUCw/YW54sinqcx1IyMTcuH1jqcV8MAq8W6iCdxEl+pJ6K7</source>
+  </file>
+  <package name="Codex" full_name="Codex">
+    <package name="AuthHook" full_name="Codex\AuthHook"/>
+  </package>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <namespace name="Codex" full_name="Codex">
+    <namespace name="AuthHook" full_name="Codex\AuthHook">
+      <namespace name="Console" full_name="Codex\AuthHook\Console"/>
+      <namespace name="Providers" full_name="Codex\AuthHook\Providers"/>
+    </namespace>
+  </namespace>
+  <deprecated count="0"/>
+</project>
