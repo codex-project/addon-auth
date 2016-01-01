@@ -37,6 +37,4 @@ class HookServiceProvider extends ServiceProvider
         $this->addCodexHook('factory:ready', FactoryHook::class);
         $this->addCodexHook('controller:document', ControllerDocumentHook::class);
     }
-
-
 }

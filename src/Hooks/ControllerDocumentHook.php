@@ -29,13 +29,11 @@ class ControllerDocumentHook implements Hook
 
     public function handle(CodexController $controller, $projectSlug, $ref, $path)
     {
-        if ( !$this->codex->hasProject($projectSlug) )
-        {
+        if (!$this->codex->hasProject($projectSlug)) {
             return;
         }
         $project = $this->codex->getProject($projectSlug);
-        if ( $project->config('enable_auth_hook', false) !== true )
-        {
+        if ($project->config('enable_auth_hook', false) !== true) {
             return;
         }
     }
