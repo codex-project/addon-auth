@@ -1,6 +1,6 @@
 <?php
 
-namespace Codex\AuthHook\Providers;
+namespace Codex\Hooks\Auth\Providers;
 
 use Sebwite\Support\ConsoleServiceProvider as BaseConsoleProvider;
 
@@ -17,12 +17,12 @@ class ConsoleServiceProvider extends BaseConsoleProvider
     /**
      * @var  string
      */
-    protected $namespace = 'Codex\\AuthHook\\Console';
+    protected $namespace = 'Codex\\Hooks\\Auth\\Console';
 
     /**
      * @var  string
      */
-    protected $prefix = 'codex.auth-hook.commands.';
+    protected $prefix = 'codex.hooks.auth.commands.';
 
     /**
      * @var  array

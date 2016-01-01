@@ -1,18 +1,9 @@
 {
     "name": "codex/auth-hook",
     "description": "codex/auth-hook is a laravel package",
-    "repositories": [{"type": "composer", "url": "http://packages.sebwite.nl"}],
-    "authors": [
-        {
-            "name": "Sebwite",
-            "email": "info@sebwite.nl",
-            "homepage": "https://sebwite.nl"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=5.5.9",
+        "codex/core": "1.0.*",
         "sebwite/support": "1.0.*"
     },
     "require-dev": {
@@ -20,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Codex\\AuthHook\\": "src/"
+            "Codex\\Hooks\\Auth\\": "src/"
         }
     },
     "extra": {

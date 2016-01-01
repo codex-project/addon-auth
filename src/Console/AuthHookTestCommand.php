@@ -1,6 +1,6 @@
 <?php
 
-namespace Codex\AuthHook\Console;
+namespace Codex\Hooks\Auth\Console;
 
 use Sebwite\Support\Command;
 
