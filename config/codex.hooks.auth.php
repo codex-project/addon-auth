@@ -1,12 +1,16 @@
 <?php
 
 return [
-    'providers' => [ 'github', 'bitbucket', 'google' ],
+    'providers' => [ 'github', 'bitbucket' ],
 
     'default_project_config' => [
         'hooks' => [
             'auth' => [
-                'allow' => [ ]
+                'provider' => null,
+                'allow' => [
+                    'groups' => [],
+                    'users' => [],
+                ]
             ]
         ]
     ]

@@ -1,7 +1,307 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="API Documentation" version="v2.8.5">
   <partials/>
-  <file path="Http/Controllers/SocialAuthController.php" generated-path="Http.Controllers.SocialAuthController.html" hash="af9605069c966d11ff066b77a5e10f1a" package="Default">
+  <file path="Manager.php" generated-path="Manager.html" hash="297a7c7f3210018eae41913901e8093c" package="Default">
+    <docblock line="0">
+      <description>Part of the Sebwite PHP packages.</description>
+      <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Codex">\Codex\Core\Contracts\Codex</namespace-alias>
+    <namespace-alias name="CodexTrait">\Codex\Core\Traits\CodexTrait</namespace-alias>
+    <namespace-alias name="ContainerTrait">\Codex\Core\Traits\ContainerTrait</namespace-alias>
+    <namespace-alias name="ManagerContract">\Codex\Hooks\Auth\Contracts\Manager</namespace-alias>
+    <namespace-alias name="Container">\Illuminate\Contracts\Container\Container</namespace-alias>
+    <namespace-alias name="SocialAuthFactory">\Laravel\Socialite\Contracts\Factory</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\Hooks\Auth" line="23" package="Codex\Hooks">
+      <extends/>
+      <implements>\Codex\Hooks\Auth\Contracts\Manager</implements>
+      <name>Manager</name>
+      <full_name>\Codex\Hooks\Auth\Manager</full_name>
+      <docblock line="23">
+        <description>This is the class Manager.</description>
+        <long-description></long-description>
+        <tag name="package" line="23" description="Codex\Hooks"/>
+        <tag name="author" line="23" description="Sebwite"/>
+        <tag name="copyright" line="23" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="27" package="Codex\Hooks">
+        <name>$social</name>
+        <full_name>\Codex\Hooks\Auth\Manager::social</full_name>
+        <default></default>
+        <docblock line="27">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="29" package="Codex\Hooks">
+        <name>__construct</name>
+        <full_name>\Codex\Hooks\Auth\Manager::__construct()</full_name>
+        <docblock line="29">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$container</name>
+          <default></default>
+          <type>\Illuminate\Contracts\Container\Container</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$codex</name>
+          <default></default>
+          <type>\Codex\Core\Contracts\Codex</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$social</name>
+          <default></default>
+          <type>\Laravel\Socialite\Contracts\Factory</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="36" package="Codex\Hooks">
+        <name>shareUserData</name>
+        <full_name>\Codex\Hooks\Auth\Manager::shareUserData()</full_name>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="45" package="Codex\Hooks">
+        <name>getProviders</name>
+        <full_name>\Codex\Hooks\Auth\Manager::getProviders()</full_name>
+        <docblock line="45">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="50" package="Codex\Hooks">
+        <name>isValidProvider</name>
+        <full_name>\Codex\Hooks\Auth\Manager::isValidProvider()</full_name>
+        <docblock line="50">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="55" package="Codex\Hooks">
+        <name>redirect</name>
+        <full_name>\Codex\Hooks\Auth\Manager::redirect()</full_name>
+        <docblock line="55">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="68" package="Codex\Hooks">
+        <name>callback</name>
+        <full_name>\Codex\Hooks\Auth\Manager::callback()</full_name>
+        <docblock line="68">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="82" package="Codex\Hooks">
+        <name>isLoggedIn</name>
+        <full_name>\Codex\Hooks\Auth\Manager::isLoggedIn()</full_name>
+        <docblock line="82">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="87" package="Codex\Hooks">
+        <name>logout</name>
+        <full_name>\Codex\Hooks\Auth\Manager::logout()</full_name>
+        <docblock line="87">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="92" package="Codex\Hooks">
+        <name>getLoggedInProviders</name>
+        <full_name>\Codex\Hooks\Auth\Manager::getLoggedInProviders()</full_name>
+        <docblock line="92">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="104" package="Codex\Hooks">
+        <name>getUser</name>
+        <full_name>\Codex\Hooks\Auth\Manager::getUser()</full_name>
+        <docblock line="104">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="29" code="PPC:ERR-50015">Argument $container is missing from the Docblock of __construct</error>
+      <error line="29" code="PPC:ERR-50015">Argument $codex is missing from the Docblock of __construct</error>
+      <error line="29" code="PPC:ERR-50015">Argument $social is missing from the Docblock of __construct</error>
+      <error line="29" code="PPC:ERR-50008">No summary for method __construct()</error>
+      <error line="36" code="PPC:ERR-50008">No summary for method shareUserData()</error>
+      <error line="45" code="PPC:ERR-50008">No summary for method getProviders()</error>
+      <error line="50" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of isValidProvider</error>
+      <error line="50" code="PPC:ERR-50008">No summary for method isValidProvider()</error>
+      <error line="55" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirect</error>
+      <error line="55" code="PPC:ERR-50008">No summary for method redirect()</error>
+      <error line="68" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of callback</error>
+      <error line="68" code="PPC:ERR-50008">No summary for method callback()</error>
+      <error line="82" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of isLoggedIn</error>
+      <error line="82" code="PPC:ERR-50008">No summary for method isLoggedIn()</error>
+      <error line="87" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of logout</error>
+      <error line="87" code="PPC:ERR-50008">No summary for method logout()</error>
+      <error line="92" code="PPC:ERR-50008">No summary for method getLoggedInProviders()</error>
+      <error line="104" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of getUser</error>
+      <error line="104" code="PPC:ERR-50008">No summary for method getUser()</error>
+      <error line="27" code="PPC:ERR-50007">No summary for property $social</error>
+    </parse_markers>
+    <source>eJzVVk1v2zgQvftXzBYBJAWOmy2wl3jjNshm0QBpNkDaXuwgoKWxREQmBZJyGhT+7x1SoiTLioMeVzAsifPxhvNmhvr7Y5EVo/fHxyM4hjumDMgVmAzhHpfP3CDcfb6DgsVPLEU9ISWrd8NjFBqBiQRiWbwonmYGuFhJtWaGSwHLUiQ5JkAuMnLHtfdBWs79zfXl1e39Fax4juTy/UiwNWpSQriUCf5YfJbySS8uSpNNR6NS++VLqZD+hFEsNnrhFqd9+VfFuBe659c1hGFcoNrTauE7aF+YoC0oYBrqRy+rTK/zvFxzwcxuiDVG+1Rp3zDFNpgv7mXMWc53jP6lf6leLFIltpHUi5SPmq+vNrH0swmNc6absDxRn3zW66uzNydm5FUqL/WcO1HLa23pX8M4gg+nf/419uoTuMhzcEINCjWqDSaO052YgK+LHNcozF72Rj9HFqPJvmNjDH12nFKhpMHYUG0daZcZv14ucx7DqhSxq8DHx1gKbVQZm7BxBEexfxxXUHaFbuP9NHv/kXNfRWivI1vOJzONpnEbtm6j6aAiQYQV0oCCg4HzdkNWuB3els6Ywm+U43+YYWE/Nr4iemQpTFj7TtHcyDTF5FrcKbnhCSodRhHM4DTq2LloilrBRnLIeg6n8DDdtd1wfHZPjW2TkZPZmj1hGFiVIBqwowzYTYVBXCpF5WF3F4w7MdiFsAkv6vjYHkoVWXai7mVKoSmVoOklVjwlaEvNJLONMbFNMfFomiKZw0N0kBSuv1MDJx6tE+swKhePTCn20ip2t9sJegxUwHgYXGHCFXXE66i2Kv6o/b8ear8eTKbkMwjidXEtNtboQqWl7d+rHzEWFjt8dysNMHBSaOpn/rPxun14t0eXIz5RfNMttar0T2bVeies6c42OkV6fg5BSsdLuQz2SrnyQl5piqEO5xCUVVG5+xmuGc/tm0KWnEmVBg3DnUR3CGscNsk+zEnM8nxJo/d/yUl1/Q4zRzarTZDnbbrsethVJMKgo8iKIgx0fYyQLIjc4BDo0vg6FvWJkmWhLRaZncxyrs1/KmWCa/cBokOvh+aWx0/26yK0k6Pxs7hHrUnz7KwoTRjkMuViEsAEOj3Zab4BEwvQt3Cobw0LP1PfnBMtYMb0YIyHochAlgcGQ+ufvtwoU7ZRBhMxsNe3ZuLw2dE/S5sxS0zOu6cKBYQsziAcnIv2u6jdVa9J3JzwnTWQ677+biDzB1tU/nX3uNoeGhGNh7fS0jvOBgbD70S/VyqWxwG+Bk7N7egXkMSrgA==</source>
+  </file>
+  <file path="Contracts/Manager.php" generated-path="Contracts.Manager.html" hash="b30f977b94e22721ceb7b40c4cf20d0d" package="Default">
+    <docblock line="0">
+      <description>Part of the Sebwite PHP packages.</description>
+      <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <interface namespace="Codex\Hooks\Auth\Contracts" line="17" package="Codex\Hooks">
+      <name>Manager</name>
+      <full_name>\Codex\Hooks\Auth\Contracts\Manager</full_name>
+      <docblock line="17">
+        <description>Interface Manager</description>
+        <long-description></long-description>
+        <tag name="package" line="17" description="Codex\Hooks"/>
+        <tag name="author" line="17" description="Sebwite"/>
+        <tag name="copyright" line="17" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
+        <tag name="mixin" line="17" description="\Codex\Hooks\Auth\Manager"/>
+      </docblock>
+    </interface>
+    <source>eJxlj8FqAjEURff5iresQ3Gq4KqFVgZBwZYBt7OJyRvzcCYZkme1SP+9MUywYHbhnpzc+/Y+mEGURSGggFp6BtcCG4Qd7s/ECPW6hkGqozxgmEboxm1JoQ0I0mpQbvjxdDAMZFvne8nkLOxPVneoISpM1FHIjkgl/XZTrb52K2ipw6gshZU9hgghVE7jpVk7dwzN8sSmqZxlLxWHV5Gbbiyjb2/0p7RR68dmH/mb8fxzpVhGn/M5zSNTdB8yvszXJzWB+cts8ZzxKSy7DlIYwGNA/406OXq6xH3Nw4J7yVLQQ/WrEL/iD0zRfMo=</source>
+  </file>
+  <file path="ProjectAuth.php" generated-path="ProjectAuth.html" hash="232cf8aa2bd37dea77d9df540edc95be" package="Default">
+    <docblock line="0">
+      <description>Part of the Sebwite PHP packages.</description>
+      <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Codex">\Codex\Core\Contracts\Codex</namespace-alias>
+    <namespace-alias name="Project">\Codex\Core\Project</namespace-alias>
+    <namespace-alias name="CodexTrait">\Codex\Core\Traits\CodexTrait</namespace-alias>
+    <namespace-alias name="ConfigTrait">\Codex\Core\Traits\ConfigTrait</namespace-alias>
+    <namespace-alias name="ManagerContract">\Codex\Hooks\Auth\Contracts\Manager</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\Hooks\Auth" line="22" package="Codex\Hooks">
+      <extends/>
+      <name>ProjectAuth</name>
+      <full_name>\Codex\Hooks\Auth\ProjectAuth</full_name>
+      <docblock line="22">
+        <description>This is the class ProjectAuth.</description>
+        <long-description></long-description>
+        <tag name="package" line="22" description="Codex\Hooks"/>
+        <tag name="author" line="22" description="Sebwite"/>
+        <tag name="copyright" line="22" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
+      </docblock>
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="26" package="Codex\Hooks">
+        <name>$project</name>
+        <full_name>\Codex\Hooks\Auth\ProjectAuth::project</full_name>
+        <default></default>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="28" package="Codex\Hooks">
+        <name>$manager</name>
+        <full_name>\Codex\Hooks\Auth\ProjectAuth::manager</full_name>
+        <default></default>
+        <docblock line="28">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="36" package="Codex\Hooks">
+        <name>__construct</name>
+        <full_name>\Codex\Hooks\Auth\ProjectAuth::__construct()</full_name>
+        <docblock line="36">
+          <description>Instantiates the class</description>
+          <long-description></long-description>
+          <tag name="param" line="36" description="" type="\Codex\Core\Contracts\Codex" variable="$codex">
+            <type>\Codex\Core\Contracts\Codex</type>
+          </tag>
+          <tag name="param" line="36" description="" type="\Codex\Hooks\Auth\Contracts\Manager" variable="$manager">
+            <type>\Codex\Hooks\Auth\Contracts\Manager</type>
+          </tag>
+          <tag name="param" line="36" description="" type="\Codex\Core\Project" variable="$project">
+            <type>\Codex\Core\Project</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$codex</name>
+          <default></default>
+          <type>\Codex\Core\Contracts\Codex</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$manager</name>
+          <default></default>
+          <type>\Codex\Hooks\Auth\Contracts\Manager</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$project</name>
+          <default></default>
+          <type>\Codex\Core\Project</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="44" package="Codex\Hooks">
+        <name>getProvider</name>
+        <full_name>\Codex\Hooks\Auth\ProjectAuth::getProvider()</full_name>
+        <docblock line="44">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="49" package="Codex\Hooks">
+        <name>isAllowed</name>
+        <full_name>\Codex\Hooks\Auth\ProjectAuth::isAllowed()</full_name>
+        <docblock line="49">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="44" code="PPC:ERR-50008">No summary for method getProvider()</error>
+      <error line="49" code="PPC:ERR-50008">No summary for method isAllowed()</error>
+      <error line="26" code="PPC:ERR-50007">No summary for property $project</error>
+      <error line="28" code="PPC:ERR-50007">No summary for property $manager</error>
+    </parse_markers>
+    <source>eJx9VdFq2zAUffdX3EFo7JK022BP2bKVUmihG4F2T8soinxta3UkI8ntysi/T5Ilx7GdhJDaukfnnnOu7H7+WhVVdHl+HsE5rIjUIDLQBcIDbl6ZRljdrqAi9JnkqC4MyOLuGUWuEAhPgYrqTbK80MB4JuSWaCY4bGqelpiCoSgMHVOBw6Ac/f3d9c2PhxvIWImG8jLiZIvKgBCuRYp/17dCPKv1Va2LRRTVKixfC4nmh2tJqFZrt7jo11dS/EGqB+uPkrCwyV0fR/CM5QPIXlNHwnfCjS8JRIG/DDUj3Af7aBMwX+uclkQp8BItV0j1W4jIfzo9XZkYrJChGgbkSvsh+J3hNqYJfHz/4dMswC/gqizBFRVIVChfMHUDGOiK/kWWrLXv4pjBQTYOUUmhzR4z7kkVku8Xtk00vmBigTuuNOGaEY2dYFzZ5uH+2Ewk2cL6+PDbPCbU3o5vPDm4oO1ET58K9D/Br9962biuNyWjkNWcumfh6YkK41XWVMeN5EbqrH9eWiWzMIa2QeKYm4G4xvaZmi8VascYN4zJYhRg5xUHpvmSNgvTwoZyYU/VNBnu9FLgS2d2PYhntJB27ra8i0ZzyFEbWy8sRRn3/UjUteSBOCisPHyanCRmypxp8YrpgJZlEL87NDRfMnUv8hzTOx770oGyJOkQdLRlpFS4z8BrcXGYR8QF1WtkaH+ayniXRWc/sfL3BMG+W552kc4Pbiv9FjebfsHUNldT+J3A2Zl5uz4RKYkp2+X5kjP6bN+sMxjgZ2COJB5za2ujZsck5FLUVashVBsFTW3QxvyrQEILOITZl+jEXfbxofXeoIN1fLUijhg7aXBvdPyuE8DwOOyiXfQf0e0wkw==</source>
+  </file>
+  <file path="Http/Controllers/SocialAuthController.php" generated-path="Http.Controllers.SocialAuthController.html" hash="b3b89827c4a00bd1b734a67a3abdac9f" package="Default">
     <docblock line="0">
       <description>Part of the Sebwite PHP packages.</description>
       <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -11,8 +311,8 @@
     <namespace-alias name="Codex">\Codex\Core\Contracts\Codex</namespace-alias>
     <namespace-alias name="MenuFactory">\Codex\Core\Contracts\Menus\MenuFactory</namespace-alias>
     <namespace-alias name="Controller">\Codex\Core\Http\Controllers\Controller</namespace-alias>
+    <namespace-alias name="Manager">\Codex\Hooks\Auth\Contracts\Manager</namespace-alias>
     <namespace-alias name="ViewFactory">\Illuminate\Contracts\View\Factory</namespace-alias>
-    <namespace-alias name="SocialAuthFactory">\Laravel\Socialite\Contracts\Factory</namespace-alias>
     <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Http\Controllers" line="23" package="Codex\Hooks">
       <extends>\Codex\Core\Http\Controllers\Controller</extends>
       <name>SocialAuthController</name>
@@ -25,58 +325,18 @@
         <tag name="copyright" line="23" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
       </docblock>
       <property static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="25" package="Codex\Hooks">
-        <name>$social</name>
-        <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::social</full_name>
+        <name>$manager</name>
+        <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::manager</full_name>
         <default></default>
         <docblock line="25">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="35" package="Codex\Hooks">
-        <name>__construct</name>
-        <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::__construct()</full_name>
-        <docblock line="35">
-          <description>Create a new authentication controller instance.</description>
-          <long-description></long-description>
-          <tag name="param" line="35" description="" type="\Codex\Core\Contracts\Codex" variable="$codex">
-            <type>\Codex\Core\Contracts\Codex</type>
-          </tag>
-          <tag name="param" line="35" description="" type="\Codex\Core\Contracts\Menus\MenuFactory" variable="$menu">
-            <type>\Codex\Core\Contracts\Menus\MenuFactory</type>
-          </tag>
-          <tag name="param" line="35" description="" type="\Illuminate\Contracts\View\Factory" variable="$view">
-            <type>\Illuminate\Contracts\View\Factory</type>
-          </tag>
-          <tag name="param" line="35" description="" type="\Laravel\Socialite\Contracts\Factory" variable="$social">
-            <type>\Laravel\Socialite\Contracts\Factory</type>
-          </tag>
-        </docblock>
-        <argument line="0" by_reference="false">
-          <name>$codex</name>
-          <default></default>
-          <type>\Codex\Core\Contracts\Codex</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$menu</name>
-          <default></default>
-          <type>\Codex\Core\Contracts\Menus\MenuFactory</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$view</name>
-          <default></default>
-          <type>\Illuminate\Contracts\View\Factory</type>
-        </argument>
-        <argument line="0" by_reference="false">
-          <name>$social</name>
-          <default></default>
-          <type>\Laravel\Socialite\Contracts\Factory</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="43" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="45" package="Codex\Hooks">
         <name>validateProviderName</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::validateProviderName()</full_name>
-        <docblock line="43">
+        <docblock line="45">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -91,13 +351,13 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="56" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="58" package="Codex\Hooks">
         <name>redirectToProvider</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::redirectToProvider()</full_name>
-        <docblock line="56">
+        <docblock line="58">
           <description>Redirect the user to the GitHub authentication page.</description>
           <long-description></long-description>
-          <tag name="return" line="56" description="" type="\Response">
+          <tag name="return" line="58" description="" type="\Response">
             <type>\Response</type>
           </tag>
         </docblock>
@@ -107,15 +367,28 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="67" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="70" package="Codex\Hooks">
         <name>handleProviderCallback</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::handleProviderCallback()</full_name>
-        <docblock line="67">
+        <docblock line="70">
           <description>Obtain the user information from GitHub.</description>
           <long-description></long-description>
-          <tag name="return" line="67" description="" type="\Response">
+          <tag name="return" line="70" description="" type="\Response">
             <type>\Response</type>
           </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$provider</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="80" package="Codex\Hooks">
+        <name>getLogout</name>
+        <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::getLogout()</full_name>
+        <docblock line="80">
+          <description></description>
+          <long-description></long-description>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$provider</name>
@@ -125,16 +398,18 @@
       </method>
     </class>
     <parse_markers>
-      <error line="43" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of validateProviderName</error>
-      <error line="43" code="PPC:ERR-50015">Argument $abort is missing from the Docblock of validateProviderName</error>
-      <error line="43" code="PPC:ERR-50008">No summary for method validateProviderName()</error>
-      <error line="56" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirectToProvider</error>
-      <error line="67" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of handleProviderCallback</error>
-      <error line="25" code="PPC:ERR-50007">No summary for property $social</error>
+      <error line="45" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of validateProviderName</error>
+      <error line="45" code="PPC:ERR-50015">Argument $abort is missing from the Docblock of validateProviderName</error>
+      <error line="45" code="PPC:ERR-50008">No summary for method validateProviderName()</error>
+      <error line="58" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirectToProvider</error>
+      <error line="70" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of handleProviderCallback</error>
+      <error line="80" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of getLogout</error>
+      <error line="80" code="PPC:ERR-50008">No summary for method getLogout()</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $manager</error>
     </parse_markers>
-    <source>eJytVW1P2zAQ/p5fcZMqkqLS7vULjG6oYisSYwjYviwTcpNra5Hake0U0MR/39mOqdtqDGmLqiq277nn7rnz5f2Hel4ng93dBHbhnCkDcgpmjnCJk1tuEM7H51Cz4obNUPfJyNqd8gKFRmCihELW94rP5ga4mEq1YIZLAZNGlBWWQC7m5I7r4IOsnPvTk9Hx2eUxTHmF5HKQCLZATUYII1niXT6W8kbnR42Z52Nj6nwkhVGyqlDpgyRpiP2orvNvGtWBW3nUSCr0pqwwOnebT5x/QdH4/0+0lup+y3aTO3r3tidV1Sy4YCb2+53jbd66BKbBrtcYTpliS6zyS1lwVvE1cITzx1aER3So1ZUVlX5WzKJiWoM1W0UXavUxCN8+kbrumBFKqnAayu6OVqVtkWGZFV14/fLVu14w78NRVYE71KCQirLE0pXVh7bKYxUg4J1BUWpYbSW/EktUK2mwMNQ+He2AlLXdd5nbZxdGCklxYCDwFmwKKAwvfO8VKwoutGGiwH6LC3ASRbEF5H9uGoifTmG3ngXe6ijoLGixif1713jiJW1tYp/TOxbrtWvRA69sM6l4AdNGFE6q62sSSxvVFCbzaftUe7CVQS9uYh9Yb7s/A2vX0flyOmKmqEL7+zFhoGrdO5fdg0dIx46NvaH3B4cbvRBZLHhJs+aWGLJ01qA2aQ9+QIp3BdYmhcMhpDM0p3ImG1r+bCkeko1eexRlSaKWVJlzJZe8RHVGkynr1O2KAmUTSXPyECgN3Ey049B0yMU1U4rdx0jKfcpnWeoS78/tHezb5u0HE512e97tSgc+hexF63Znp2XvRpT2cZvZ25dvepCeSUMXwwOC4zRy+BDnH92pCyy5Ii3cSKEhpcBI9/6Zm3Ez2bxmNQ2VrXul0DRKQH5Bs5wKjU92n2oJr2SQeiXWlq6+1k/XJkqyDWStifaGpeLLNZa9YQgiW++LSJevE8Par5ZTJf7OTZVctPr8mxZzZj+YIa0Rq6oJze3/p0fHhX74DEGsYRYhBwMP3hsaeYMiqPSQ/AZoUp12</source>
+    <source>eJy1VVFvGzcMfr9fwQFGbQeO3XXbS9O4DYxuCZBlQdP1pVcUso62hcjSQdI5CYr891E6yVbOaVag7cGwLYn8PvIjqXv1ul7VxeTgoIADuGTGgV6AWyFc4fxGOITL00uoGb9mS7RjMvJ254KjsghMVcB1fWfEcuVAqIU2a+aEVjBvVCWxAoJYEZywCYOsAvz52eztxdVbWAiJBDkpFFujJSOEma7wtjzV+tqWJ41blafO1eVMK2e0lGjsUVE0xH5S1+W/Fs1RWLVeM22wNWXc2TJsPnH+N6qm/f6T1trc7dl2ubP/uW0WbYbOFGUc7c6kbNZCMZfzfxB4U0ZqYBb8ehtJqsp7Lx99vGxcMmvB8+ziSFV5kySOTxZZOGbkpU06TQUOR7siRs+0HPAhvHj+6x+jZD6GEykhHFowSPJvsAoFbEO70lww+TBAwFuHqrKw2yq+FJ6oNtohd9QovXUSKxyE1P1zADODJBowUHgDPgdUTvC2zfiOQyjrmOI4jn7JnVQxbA3l1/sD8qfH/dY3Oe81DyVBi67v/xe+Jd7Q1uO8TzVX6xvF66YulEOjmIQId04/G5RlWyTxIKJtDjYcfhUjS+cKraUqpN8zb7nwE9yz7U4EmbS1buZScFg0iofaff5M1bPONNwN2jq02o9gT9JRPhitUmQVBUjJDwNL21eBjxnqlJcvc57EEFED0vBo69LzN9XhNALCcdaVXRNR0f12QxSD/rJB6/oj+Ah9vOVYuz4cT6G/RHeul7qh5afIcV90un4rxobKUZGml0ZvRIXmgm7DQa+OK4qUzTXdzcdAeWA3017w9uE+iP9wKuwHf5JAd4BZzmIBg18iwrNnkWiYofsnbA5+f/7bCPoX2tEwtg4Jr58B3uepZnP8DithKO1wj9GNaMDp8P8v4U6beXe0a0phb5YNusYoKN/Rq4KKik82mImE7/UjAnQlbJV7ugzDeDn5J0bSVTxx7km9r8c/c8fiyzCokb8+F0avoy7fp8GK+fdwSmfGpJzTS+L7dXh8Yg6nfJ9hX7StSEMSjAaEZijM5XjlL7qxb4Sx1Euh8raaTKDndTqcOn2Naqvqo2lvZ+/nZSq7+D8gz/vivvgPdQIJ2w==</source>
   </file>
-  <file path="Http/Controllers/AuthController.php" generated-path="Http.Controllers.AuthController.html" hash="72702f0196efa1ab934e24652cd34730" package="Default">
+  <file path="Http/Controllers/AuthController.php" generated-path="Http.Controllers.AuthController.html" hash="428b23d076ce9dfecbcec49b58b46b5f" package="Default">
     <docblock line="0">
       <description>Part of the Sebwite PHP packages.</description>
       <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -144,11 +419,11 @@
     <namespace-alias name="Codex">\Codex\Core\Contracts\Codex</namespace-alias>
     <namespace-alias name="MenuFactory">\Codex\Core\Contracts\Menus\MenuFactory</namespace-alias>
     <namespace-alias name="Controller">\Codex\Core\Http\Controllers\Controller</namespace-alias>
+    <namespace-alias name="Manager">\Codex\Hooks\Auth\Contracts\Manager</namespace-alias>
     <namespace-alias name="Validator">\Illuminate\Contracts\Validation\Validator</namespace-alias>
     <namespace-alias name="ViewFactory">\Illuminate\Contracts\View\Factory</namespace-alias>
     <namespace-alias name="AuthenticatesUsers">\Illuminate\Foundation\Auth\AuthenticatesUsers</namespace-alias>
     <namespace-alias name="ThrottlesLogins">\Illuminate\Foundation\Auth\ThrottlesLogins</namespace-alias>
-    <namespace-alias name="SocialAuthFactory">\Laravel\Socialite\Contracts\Factory</namespace-alias>
     <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Http\Controllers" line="26" package="Codex\Hooks">
       <extends>\Codex\Core\Http\Controllers\Controller</extends>
       <name>AuthController</name>
@@ -170,8 +445,8 @@
         </docblock>
       </property>
       <property static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="32" package="Codex\Hooks">
-        <name>$social</name>
-        <full_name>\Codex\Hooks\Auth\Http\Controllers\AuthController::social</full_name>
+        <name>$manager</name>
+        <full_name>\Codex\Hooks\Auth\Http\Controllers\AuthController::manager</full_name>
         <default></default>
         <docblock line="32">
           <description></description>
@@ -186,22 +461,30 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="48" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="39" package="Codex\Hooks">
+        <name>getLogout</name>
+        <full_name>\Codex\Hooks\Auth\Http\Controllers\AuthController::getLogout()</full_name>
+        <docblock line="39">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="59" package="Codex\Hooks">
         <name>__construct</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\AuthController::__construct()</full_name>
-        <docblock line="48">
+        <docblock line="59">
           <description>Create a new authentication controller instance.</description>
           <long-description></long-description>
-          <tag name="param" line="48" description="" type="\Codex\Core\Contracts\Codex" variable="$codex">
+          <tag name="param" line="59" description="" type="\Codex\Core\Contracts\Codex" variable="$codex">
             <type>\Codex\Core\Contracts\Codex</type>
           </tag>
-          <tag name="param" line="48" description="" type="\Codex\Core\Contracts\Menus\MenuFactory" variable="$menu">
+          <tag name="param" line="59" description="" type="\Codex\Core\Contracts\Menus\MenuFactory" variable="$menu">
             <type>\Codex\Core\Contracts\Menus\MenuFactory</type>
           </tag>
-          <tag name="param" line="48" description="" type="\Illuminate\Contracts\View\Factory" variable="$view">
+          <tag name="param" line="59" description="" type="\Illuminate\Contracts\View\Factory" variable="$view">
             <type>\Illuminate\Contracts\View\Factory</type>
           </tag>
-          <tag name="param" line="48" description="" type="\Laravel\Socialite\Contracts\Factory" variable="$social">
+          <tag name="param" line="59" description="" type="\Laravel\Socialite\Contracts\Factory" variable="$social">
             <type>\Laravel\Socialite\Contracts\Factory</type>
           </tag>
         </docblock>
@@ -221,21 +504,21 @@
           <type>\Illuminate\Contracts\View\Factory</type>
         </argument>
         <argument line="0" by_reference="false">
-          <name>$social</name>
+          <name>$manager</name>
           <default></default>
-          <type>\Laravel\Socialite\Contracts\Factory</type>
+          <type>\Codex\Hooks\Auth\Contracts\Manager</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="62" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="74" package="Codex\Hooks">
         <name>validator</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\AuthController::validator()</full_name>
-        <docblock line="62">
+        <docblock line="74">
           <description>Get a validator for an incoming registration request.</description>
           <long-description></long-description>
-          <tag name="param" line="62" description="" type="array" variable="$data">
+          <tag name="param" line="74" description="" type="array" variable="$data">
             <type>array</type>
           </tag>
-          <tag name="return" line="62" description="" type="\Illuminate\Contracts\Validation\Validator">
+          <tag name="return" line="74" description="" type="\Illuminate\Contracts\Validation\Validator">
             <type>\Illuminate\Contracts\Validation\Validator</type>
           </tag>
         </docblock>
@@ -245,16 +528,16 @@
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="77" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="90" package="Codex\Hooks">
         <name>create</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\AuthController::create()</full_name>
-        <docblock line="77">
+        <docblock line="90">
           <description>Create a new user instance after a valid registration.</description>
           <long-description></long-description>
-          <tag name="param" line="77" description="" type="array" variable="$data">
+          <tag name="param" line="90" description="" type="array" variable="$data">
             <type>array</type>
           </tag>
-          <tag name="return" line="77" description="" type="\App\User">
+          <tag name="return" line="90" description="" type="\App\User">
             <type>\App\User</type>
           </tag>
         </docblock>
@@ -267,12 +550,14 @@
     </class>
     <parse_markers>
       <error line="34" code="PPC:ERR-50008">No summary for method getLogin()</error>
+      <error line="39" code="PPC:ERR-50008">No summary for method getLogout()</error>
+      <error line="59" code="PPC:ERR-50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $manager in __construct()</error>
       <error line="30" code="PPC:ERR-50007">No summary for property $redirectPath</error>
-      <error line="32" code="PPC:ERR-50007">No summary for property $social</error>
+      <error line="32" code="PPC:ERR-50007">No summary for property $manager</error>
     </parse_markers>
-    <source>eJydVd9v0zAQfs9fcQ+T0lZlBaTxkDFgqoAhDTRpwAuZkOtcW2uJHWxn7cT2v3O2kzRp120iqqrY990P3/ed8/Z9uSyjyWgUwQgumLag5mCXCJc4WwmLcHF2ASXj12yB5pBADncuOEqDwGQGXJW3WiyWFoScK10wK5SEWSWzHDOgEEsKJ0wTg1A+/PmX6cdvlx9hLnKkkJNIsgINgRCmKsN1eqbUtUlPK7tMz6wt06mSVqs8R22Oo6ii7Kdlmf4wqI/9KnhNlcYAZdya1G8+Yv+Ksgr/n2it9O0Odjt35z1gv+R5VQjJbDfuT5aLzHeieVWPwgWu0roCYAbculdQx+uTotaG0L457g+lFZyMxrXDPOnyfamVtTmac7UQssafM81uME8vFRdUcq++TmnB7MK0BTbq+e5opp+jl+fMGHCwTb8a9XxopFA/Hb69mZGX0o21EaI3bcRWezbLAR/C65evjsYN/BBO8xy80YBG6ssNZl5oD5UGuLYoMwObrehv5FJ4oe20eAw7PfTokjaRWxL+gcZMaHq/YDQBJxBPMmaWM8V0Fu+Cje9qs1/NcsFhXknuZ2mB1icZDL051OUejbbSEm5ILYOYuy5OXO+SJHfweHjskfdRCOtZcs8IphrpKMBA4grY5nQuG980hc5lmeR4WPs17kSgZgWk+0cOus+BL+1ZzjvzCAcFLbZ9nx6ikNh1Ztv3OTp3voGS2nvyIDG/f1OzjNUVt4Nw7HDUMeycYNyd6VDYeHeWmqzbRFPpxFCSdBM2qerwPmTNuK/fXbov3oV4pL++xDqIQmR0U68owyBeVGhsPIZfMa45ljaGk3cQB/2pysZXG0ltKeozWpLTTXPXAX0J6OtACuKKiFqQVBeCCg8S0/jHJdojK2BaM+LggCKx1lZrfQ/1D1y3febaUWvJa2sdhHw+3Z4Ja4MmScGuceCx1KYW557YfcFCx9wBafizu4Ktk9dHR/G4j8SCiXwL6vcah7tKCupRUrnLZtu7pPtrpege6QcgacyFLlxWIZM3Ha/9tPUuApesnXlgc0vLmtMef//Dm7s1n2KE+2KeQYcLliQ1fB8JPsCvsL7a2/8aFTa2Yb1Gz7i+Le2gdmhNV8OH+nwf/QM2LPa2</source>
+    <source>eJydVd9v2zYQftdfcQ8GJAeOvRXIHuQ1W2C0S4B0MJBuL1VQ0NTZIiKRGknZCdb+7ztSki3JsVNMCGKR/O4Hv/vu9OtvZVYGs4uLAC5gybQFtQabITzgaicswvJ2CSXjT2yDZkogh7sXHKVBYDIFrsoXLTaZBSHXShfMCiVhVck0xxTIRUbuhGl9EMq7v79bfPjz4QOsRY7kchZIVqAhEMJCpfic3Cr1ZJKbymbJrbVlslDSapXnqM08CCqKflOWyV8G9dyvaquF0lhDGbcm8Ztnzj+hrOr/H2mt9MsRdhi7897FdrLteGeSbtzg7vK8KoRkthv/b5aL1DPWvqqzcIG7pMkUmAG37iXesfqoqAS1a5+W+4fSCk6HxtFm3jT5nGllbY7mXm2EdLQ3OvnsCkp/rpA8Z8aAwx+YaXXye1v05ulw5Y8ZWSndnraS80cHWTWW7TLiY3j3089XkxY+hZs8B39oQCPdbIupl9RrqQE+W5SpgcNW8G/gQnhJHZE0gWMWHLqkTeSWJD7SmApN70tGWn8P4SxlJlspptPwGFy0mqgPqlUuOKwryX3bbND6KNHYH9eJuUejrbSELRU8CrmjcebIi+PcwcPx3CO/n/OqKnvklhoWGc8gGrkevbxusru8rk02mN7JpVZbkRIV0dhpblQ263HHj3uGLvI65AE/38ObPN3jleav4fObB8Mrt+xG48trTRhs7j/NnIymjoXpkAT/67XqngtY0C1plDGQuAN2qLEjhx+kQdW1THKcNnatOclYswKS0yOmywOMfH4/ZHw0f0ggtBjavj0M6sBOHkPbe/rZYp48KC5oxPRcdKxHxp831rNXdfT1K5FlrK6oGvW166tO4OgGk+5sqhMjVC2NfRMM1UgZU2HiuBunjdB49Z46SuqLjrpv0GBdjEjpk7SjGFG4qdDYcAJfIMRnjqUN4f01hPtGCeGx31IdMf2BlpS0bce16yH6EJJ4uKIabUiwG0HJ1+rS+I8LdUJRwLRmRA85YkNEI/8TtX/lu9Ev3X7i7Ku3zzjqRD0xZ/ZO47hgTxh5LNHVa/jQfbJD/+rIc1elTk2/Few5fnd1FU76aCyYyMMjtN9ubb5VUhBhceVG79BBSdN8p2iq9h2QVtZCFy6wkPEvHavTNewNBBds3/vA1paWTYF7xfz/RXRfkrfKw31KP1Ab5yyOG/i5ingnX9rNx3PlaKHN5hDbY37F9Utpo9bkcPY4fo3678F/Y4k9mg==</source>
   </file>
-  <file path="Http/routes.php" generated-path="Http.routes.html" hash="7dbdc686336864c5f5a20ba713bd6f44" package="Default">
+  <file path="Http/routes.php" generated-path="Http.routes.html" hash="0894e76608b24dcf9a7b9836ea4be5b9" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -281,9 +566,9 @@
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
     </parse_markers>
-    <source>eJydkEtrAjEUhff5FXeXEWTcW/sQty6k7U5cpJmrEwy5IY8iiP+9iWNkplMoGAghh3u+c7iLV9taxtg7xYDz+cFRtNUWuPAcnl+AS2rwVLdER1+LGNqaT4Fbh3t16gayyGE3hX00MigyUE3gzBikU6AYKq7poEwy99hF4tHjTVom2opMcKQ1urfkXF+HYDd56iMt+UeZ2fo3tPRMv8eKZuMI2m00sxLAk1RCj5bYybOzdfStGnQXPloo3E6/62xYs7iHTT+u7F99HTbKoQyftCmme/HRmqXQ+kvI4zCtp/6X1grTaCxJq2K8J17Sm+8PW+rKJA==</source>
+    <source>eJydkk2LwjAQQO/9FXNLC6J3d/3C6x5EvYmHbDrasCET0kRWiv9901rXqAXRXEImM+8Nw3xOTGGSJIFwluQdDod7dClTtA8v1oMNMF4yGI3hGmO+xDY2866Yk3aWlEI7DbVf5yzYZh+dWKkfqE3oGTQkNcwIaah8l1mXRtDbTi15k27+aSUJyVW/5hmLO/kbhweVsXSQOdoT2/Zg57VwkjSkGVQN9L0RrBr4XdMWc2lRuDUtWud1JJGG62OrGQiu1DcXPx2+fvT3TFxwnSu8SOeXwi75S9vTKbvboZp9Cvcfad3ThQ==</source>
   </file>
-  <file path="Providers/RouteServiceProvider.php" generated-path="Providers.RouteServiceProvider.html" hash="0a067253d65f17be753c4116702ce4c0" package="Default">
+  <file path="Providers/RouteServiceProvider.php" generated-path="Providers.RouteServiceProvider.html" hash="9f0c5c34f6cd0cdda803f3993766e65e" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -312,16 +597,16 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Providers" line="25" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Providers" line="26" package="Default">
         <name>boot</name>
         <full_name>\Codex\Hooks\Auth\Providers\RouteServiceProvider::boot()</full_name>
-        <docblock line="25">
+        <docblock line="26">
           <description>Define your route model bindings, pattern filters, etc.</description>
           <long-description></long-description>
-          <tag name="param" line="25" description="" type="\Illuminate\Routing\Router" variable="$router">
+          <tag name="param" line="26" description="" type="\Illuminate\Routing\Router" variable="$router">
             <type>\Illuminate\Routing\Router</type>
           </tag>
-          <tag name="return" line="25" description="" type="void">
+          <tag name="return" line="26" description="" type="void">
             <type>void</type>
           </tag>
         </docblock>
@@ -331,16 +616,16 @@
           <type>\Illuminate\Routing\Router</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Providers" line="38" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Providers" line="40" package="Default">
         <name>map</name>
         <full_name>\Codex\Hooks\Auth\Providers\RouteServiceProvider::map()</full_name>
-        <docblock line="38">
+        <docblock line="40">
           <description>Define the routes for the application.</description>
           <long-description></long-description>
-          <tag name="param" line="38" description="" type="\Illuminate\Routing\Router" variable="$router">
+          <tag name="param" line="40" description="" type="\Illuminate\Routing\Router" variable="$router">
             <type>\Illuminate\Routing\Router</type>
           </tag>
-          <tag name="return" line="38" description="" type="void">
+          <tag name="return" line="40" description="" type="void">
             <type>void</type>
           </tag>
         </docblock>
@@ -355,7 +640,7 @@
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
       <error line="8" code="PPC:ERR-50005">No summary for class \Codex\Hooks\Auth\Providers\RouteServiceProvider</error>
     </parse_markers>
-    <source>eJy9VMGO2jAQvecr5oAUFrHJfenSVruqFqmHim1PTRUZZwCrie3aY0RV8e8dG0i20FVv9cXxeOZ53punvHlrtzbLtOjQWyERHkyD++rJmO++eh9oW31yZqcadH6WZcEjLNo2dEoLwuqDCboRpIyunoO1xtGQXS1NIHxGt1MSz1EQHi5Cs0vQWKf05ljP15lshffwVzjcE+rmCjP7lQGvcjJJO0zg81Z5GEjyQVjbKmyADNAWQRpNzrQtg7r4kgel4acJ/XGtWixOcGfUhQbRNCoKMAVFEdYjRZIR8svyI2xQoxNkXO4ZyNDQwyXWu51w4Mkx9VOoTLt1hlASdzoa+r+H/GpOT0S2euhp+Jylu1DhEddK4wta0DFKCyulG37XT8EKYtF1ZMs7B5DkVadWONEBVK8ODWCU4F1f4pACw+6Mav5kF1atkrAOWkYVYcUajU8gJ4yblHicaOJTZv03d4Ka7u5S2Tl/lq4Pr7GPoznP1Lh0TF6Qycj/k2wn7D+4nsK38w1/2PHX3Domsc/hfh4du1abcS6jEYqV8Fin7PxmCnlvlZQ6Irb/7bwPfpsOTfSyvXg2Loc/gnIIdf24WNY1FJCXRVFGl5VH+Qr+c+SzvujQC3/IfgO+wl0a</source>
+    <source>eJy9lMFuGjEQhu/7FHNAMkFk9x4a2ipRFaQeKtKeutHK7A5gdbFde4yoKt69YwNLWBr11r3YHs98nn9m4N17u7ZZpuUGvZU1woNpcFc+GfPDlx8DrcsvzmxVg85Psix4hFnbho3SkrD8ZIJuJCmjy+dgrXF09i7nJhA+o9uqGk9WkB56pkkfGuOUXh3i+TqrW+k9/BWHO0LdXDGz3xnwV4xGaYURfF0rD2eRfJDWtgobIAO0RqiNJmfalqEuvuRBafhlQndcqhbzI+5EnWmQTaNiAcagKGI9UhQZkd/mn2GFGp0k44RnkKFzDn3Wh6104Mmx9KOpSKt1hrAmznRwzv8exFWfnohs+dDJ8IJL16vCIy6VxleyYMOUFhZKN/yuH4OVxEXXUS2vbECqrzK10skNQPlm02CQ6K4f6JACw7dGNZcaw6JVNSyDrmMtYcGVGl6ibpLjoa9JVZF1e84HNd3dpbCT/yRd79+qQWzQqbPGpWOaiDqN8/+XvJH2H4qP5tvpijd2+L27iJ+QXpz291MQdZyOfB2nI5c8HbkYX/pbx3XYiaM/T/9SrYbHsIX0WKXXxA3kIIpI6AO6YRQRMCD+gd1OO2Pn+zI+a+x680rVBdThz6AcQlU9zuZVld7O8yJOdnFoVs7/VmLSBe27Nu+zP8sIcbs=</source>
   </file>
   <file path="Providers/ConsoleServiceProvider.php" generated-path="Providers.ConsoleServiceProvider.html" hash="c7da424133d8f057d36aae4823c3140e" package="Default">
     <docblock line="0">
@@ -479,7 +764,7 @@
     </parse_markers>
     <source>eJydkU9vAiEQxe98ijmYrJpY77V/Y5r0rse9IIxCuguEGdpNGr97Ade0Nh6azuUFHo/5wdw9BhOEcLJHClIhrL3GoX31/o3a58SmXXtHvsOVEIkQNrj7sIztJoXgI2e376XT2VWdJIISKeEtEo8e4MDoNMG4Fp8Cci3n86owh61BKARQTpM9OMkpIvg9cHbUCSBrjd+MqXP46V1GAOJo3WHcW1YN0TMqRg2T7zvvoZEZcWEy4y1nyCajX8H51RQ0koo2sPXuPwA/4hcIUBDOTa6gvAyoEuOf/iFifqED6O2A+hIk7TqrYJ+cqgQmxzuczqp5mkapCRtLi4fOOpw2ZYDNbFXNoziKL2VBo4o=</source>
   </file>
-  <file path="Hooks/ControllerDocumentHook.php" generated-path="Hooks.ControllerDocumentHook.html" hash="62672ad5a2af7603c52aba903429012a" package="Default">
+  <file path="Hooks/ControllerDocumentHook.php" generated-path="Hooks.ControllerDocumentHook.html" hash="683744c1546e372cd28dcab84719dcdd" package="Default">
     <docblock line="0">
       <description>Part of the Sebwite PHP packages.</description>
       <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -487,32 +772,35 @@
     </docblock>
     <namespace-alias name="Codex">\Codex\Core\Contracts\Codex</namespace-alias>
     <namespace-alias name="Hook">\Codex\Core\Contracts\Hook</namespace-alias>
+    <namespace-alias name="Document">\Codex\Core\Document</namespace-alias>
     <namespace-alias name="CodexController">\Codex\Core\Http\Controllers\CodexController</namespace-alias>
-    <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Hooks" line="20" package="Codex\Hooks">
+    <namespace-alias name="Project">\Codex\Core\Project</namespace-alias>
+    <namespace-alias name="Html">\Sebwite\Support\Html</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Hooks" line="23" package="Codex\Hooks">
       <extends/>
       <implements>\Codex\Core\Contracts\Hook</implements>
       <name>ControllerDocumentHook</name>
       <full_name>\Codex\Hooks\Auth\Hooks\ControllerDocumentHook</full_name>
-      <docblock line="20">
+      <docblock line="23">
         <description>This is the class ControllerDocumentHook.</description>
         <long-description></long-description>
-        <tag name="package" line="20" description="Codex\Hooks"/>
-        <tag name="author" line="20" description="Sebwite"/>
-        <tag name="copyright" line="20" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
+        <tag name="package" line="23" description="Codex\Hooks"/>
+        <tag name="author" line="23" description="Sebwite"/>
+        <tag name="copyright" line="23" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth\Hooks" line="22" package="Codex\Hooks">
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth\Hooks" line="25" package="Codex\Hooks">
         <name>$codex</name>
         <full_name>\Codex\Hooks\Auth\Hooks\ControllerDocumentHook::codex</full_name>
         <default></default>
-        <docblock line="22">
+        <docblock line="25">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Hooks" line="25" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Hooks" line="28" package="Codex\Hooks">
         <name>__construct</name>
         <full_name>\Codex\Hooks\Auth\Hooks\ControllerDocumentHook::__construct()</full_name>
-        <docblock line="25">
+        <docblock line="28">
           <description>Instantiates the class</description>
           <long-description></long-description>
         </docblock>
@@ -522,10 +810,10 @@
           <type>\Codex\Core\Contracts\Codex</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Hooks" line="30" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Hooks" line="33" package="Codex\Hooks">
         <name>handle</name>
         <full_name>\Codex\Hooks\Auth\Hooks\ControllerDocumentHook::handle()</full_name>
-        <docblock line="30">
+        <docblock line="33">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -535,34 +823,40 @@
           <type>\Codex\Core\Http\Controllers\CodexController</type>
         </argument>
         <argument line="0" by_reference="false">
-          <name>$projectSlug</name>
+          <name>$project</name>
           <default></default>
-          <type/>
+          <type>\Codex\Core\Project</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$document</name>
+          <default></default>
+          <type>\Codex\Core\Document</type>
         </argument>
         <argument line="0" by_reference="false">
           <name>$ref</name>
-          <default></default>
+          <default>''</default>
           <type/>
         </argument>
         <argument line="0" by_reference="false">
           <name>$path</name>
-          <default></default>
+          <default>''</default>
           <type/>
         </argument>
       </method>
     </class>
     <parse_markers>
-      <error line="25" code="PPC:ERR-50015">Argument $codex is missing from the Docblock of __construct</error>
-      <error line="30" code="PPC:ERR-50015">Argument $controller is missing from the Docblock of handle</error>
-      <error line="30" code="PPC:ERR-50015">Argument $projectSlug is missing from the Docblock of handle</error>
-      <error line="30" code="PPC:ERR-50015">Argument $ref is missing from the Docblock of handle</error>
-      <error line="30" code="PPC:ERR-50015">Argument $path is missing from the Docblock of handle</error>
-      <error line="30" code="PPC:ERR-50008">No summary for method handle()</error>
-      <error line="22" code="PPC:ERR-50007">No summary for property $codex</error>
+      <error line="28" code="PPC:ERR-50015">Argument $codex is missing from the Docblock of __construct</error>
+      <error line="33" code="PPC:ERR-50015">Argument $controller is missing from the Docblock of handle</error>
+      <error line="33" code="PPC:ERR-50015">Argument $project is missing from the Docblock of handle</error>
+      <error line="33" code="PPC:ERR-50015">Argument $document is missing from the Docblock of handle</error>
+      <error line="33" code="PPC:ERR-50015">Argument $ref is missing from the Docblock of handle</error>
+      <error line="33" code="PPC:ERR-50015">Argument $path is missing from the Docblock of handle</error>
+      <error line="33" code="PPC:ERR-50008">No summary for method handle()</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $codex</error>
     </parse_markers>
-    <source>eJyNU21rGzEM/u5foUGgl9CXbbBP2bqVLJBCGYHsY6A4Pl3Oq2MftrwXRv/7LN+5uWXdmDmMpUd6pEf2vX3ftZ24ms0EzGAtPYFrgFqEDe6+aUJYr9bQSfUg9xguUxDH3WmFNiBIW4Ny3Q+v9y2Bto3zB0naWdhFWxusIVG0iU6HwpGiMv3d7WL5abOERhtMlFfCygOGFISwcDV+366cewjbm0htf5wLEUMBF85j2ix5qShss3P+d5wJ/oBXRF0f44xBP7AcHangMJbP3H/6uG9lZAhwjProVDygJS5RxvOhaB3WSFCGZRLlfEHLpDN0nOaQWcxKTeH1y1dvzkv4JdwYAxkM4DGg/4p1nuS/WgR96AyyFYBt8VNwnc47QkXpwiaqn2V2J/1wawNJS1oSjieQ6uTEuDNaQROtyvd+f69cSvBRUZVlD4TTHN0X4zXhN3FxnTF491SVoUfxLHMr+UVVJ5fEmeV8DpOk40vSsTFxnyyPDfsktafldQPVi3EPF9etDOs+uxrTTKejNF4eKXo7f/IN7WZRQx4L+o17j/Qs91ycdDSAuZullbv0C/EtVWf8ZM7+o5d+fxS/AMhENMY=</source>
+    <source>eJx9VG1r2zAQ/u5fcYOA7ZK422BfmiVr6QItlBGWfRnLKLIsx1oUyUhyuzH633cnW0lItokQn+7lubvnJL3/0DZtcnlxkcAFLJn1YGrwjYCVKJ+lF7C8W0LL+JZthCvQifweJBfaCWC6Am7aX1ZuGg9S18bumJdGQ9npSokKEKJBOOkiBnoF+If728Wn1QJqqQRCXiaa7YRDJwG3phI/13fGbN36pvNNL06TpHPReGuswD/tLePerYNy+m87AZyZPxre7YT2Z4Y779s+2Cgl7AB/UJwFLK35IfgANPC2XnVta6xHtJ3C2geGvxAV+CMKuGLOwQE3FkTVRqavI23DOuImmBnyY2y0xuTBdBjMEBm3Gc/h7es378bRvYAbpSAYHVjhhH0SVRjK/0oEuWuVoJ0D2ie/E8rTWuORDJz9iPdjCWrsH+6180x7ybw4ZgDzhMCuVJJD3WkejtDjIzcYYDvus9D2AJgH7z4ZrREdr8k82GC2z0qml+SvyA2jw5mdjJUiozyGYaYwanthDLF3GFWDNIaRFTXmTFMUW4ZHneTTAmUN2auIM5k3zC00K/F2EGtZSiNM8/wogJYVvrN6utcNrUQqr5+YhfXZTRmqJhlGBBzJDUQFBa4ZHKrZiOCd5dMjP6XMMw5w1odM5tLd9CpyO+lrcD6tnzI8yQpp3aNgquWgPE4XvJXUW/Sky3J1RZvPpvMiS8Mwi4Y6LAilcIZLpgplNlIj6x2vpXU+26fLx/gi7fDW+CyNuhSV31LPLFaQwmwO6WOpmN6m30/K6EnHTyUtspPlk3mJ94++9JAtrDXWZelX04EWSJA3EAohIYViaKNAmV7GMjx2Rov4pEZeN9Z0rSvS/Hi8/f9L8gf49b6k</source>
   </file>
-  <file path="Hooks/FactoryHook.php" generated-path="Hooks.FactoryHook.html" hash="9f88307adc30a52d4f03e822805d5692" package="Default">
+  <file path="Hooks/FactoryHook.php" generated-path="Hooks.FactoryHook.html" hash="8a35e831075cdec4d5c8929ddeb35b7e" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -601,70 +895,107 @@
       <error line="22" code="PPC:ERR-50015">Argument $codex is missing from the Docblock of handle</error>
       <error line="22" code="PPC:ERR-50008">No summary for method handle()</error>
     </parse_markers>
-    <source>eJx1kd9LwzAQx9/zV9yD4Da0VcEXJ/5gKhuoDNzjYMT00kbTpCRXfyD7303S1u3FUJo297lv7nt3ed1UDcsnEwYTWHJHYCVQhTDjUqIynLCA5XwJDRfvvESfBTCyT4sVPCqBxiNwU4CwzbdTZUWgjLSu5qSsgdfWFDoofCqqgqzyg06g0jWPi9n988s9SKUxyObM8Bp9gEIFtsCv9dzad7++banqPqeMtX4IzqzD8DLkuCC/TofT/+NRIOT3blexnPDEMmJkcHYzlNivnVSK8lCKdfAX3evTHX7ACnmduF1DepXhdyTGcHZyen60n5tSdN/PflVEjb/Ic9KF01hynQlb5z2U14qOh4S9YaQmCs29h4dg2rrv6A1U3Wis0ZBPXtkPizc07WuQANkakcZV8TiuUXIMByJu4wR2eFzd6fFVja7EO5S81bR09g0FhUZLVY4OE5FVcVpZqSgrOmrTdNhGJO5wPE2iW7Zlv9sF0Rc=</source>
+    <source>eJx1kV1LwzAUhu/zK86FsA9cq4I3Tvxgm2wwZeAuByNLT9u4NAlJqg7ZfzdJW7cbQ2nanOe8Oec994+61CQdDgkMYUWNA5WDKxEmNM+RS+owg9V8BZqyPS3QJh4M7OtiDUvOUFoEKjNgSh8ML0oHXObKVNRxJWFXy0x4hS/uSi/LbafjqXjNcjGZvb3PIOcCvWxKJK3QeshXoDL83syV2tvNc+3K5nNMSG274EQZ9C/pDGXObuLh+P94EPD5bbfrUI5/Qhkh0nX21JXYrpNUjFJfijLwFz3zaYqfsEZaRe5kSKvS/fbZAG6urm8vz3Njimj9bFfpnLZ3aepEZgQWVCRMVWkLpRV3oy7hbBjRRCaotfDim1bmEHoDXmmBFUpnY6/kh4QbdL3zEpDXksVxlTSMqx87hgsWtkEEGzys5nT0UKEpcIo5rYVbGfWBzHmjc170e5FIyjCtJLiVZA221Q23ZRHsDcZR9UiO5BewSNGF</source>
   </file>
-  <file path="HookServiceProvider.php" generated-path="HookServiceProvider.html" hash="c26347058fce668b4b03dc295ac0866a" package="Default">
+  <file path="HookServiceProvider.php" generated-path="HookServiceProvider.html" hash="8d53c0c241493252991ed2df7fac3fb7" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
+    <namespace-alias name="Project">\Codex\Core\Project</namespace-alias>
     <namespace-alias name="ProvidesCodex">\Codex\Core\Traits\ProvidesCodex</namespace-alias>
     <namespace-alias name="ControllerDocumentHook">\Codex\Hooks\Auth\Hooks\ControllerDocumentHook</namespace-alias>
     <namespace-alias name="FactoryHook">\Codex\Hooks\Auth\Hooks\FactoryHook</namespace-alias>
+    <namespace-alias name="Application">\Illuminate\Contracts\Foundation\Application</namespace-alias>
     <namespace-alias name="ServiceProvider">\Sebwite\Support\ServiceProvider</namespace-alias>
-    <class final="false" abstract="false" namespace="Codex\Hooks\Auth" line="18" package="Codex\AuthHook">
+    <class final="false" abstract="false" namespace="Codex\Hooks\Auth" line="20" package="Codex\AuthHook">
       <extends>\Sebwite\Support\ServiceProvider</extends>
       <name>HookServiceProvider</name>
       <full_name>\Codex\Hooks\Auth\HookServiceProvider</full_name>
-      <docblock line="18">
+      <docblock line="20">
         <description>The main service provider</description>
         <long-description></long-description>
-        <tag name="author" line="18" description="Sebwite"/>
-        <tag name="copyright" line="18" description="Copyright (c) 2015, Sebwite"/>
-        <tag name="license" line="18" description="MIT" link="https://tldrlegal.com/license/mit-license"/>
-        <tag name="package" line="18" description="Codex\AuthHook"/>
+        <tag name="author" line="20" description="Sebwite"/>
+        <tag name="copyright" line="20" description="Copyright (c) 2015, Sebwite"/>
+        <tag name="license" line="20" description="MIT" link="https://tldrlegal.com/license/mit-license"/>
+        <tag name="package" line="20" description="Codex\AuthHook"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="22" package="Codex\AuthHook">
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="24" package="Codex\AuthHook">
         <name>$dir</name>
         <full_name>\Codex\Hooks\Auth\HookServiceProvider::dir</full_name>
         <default>__DIR__</default>
-        <docblock line="22">
-          <description></description>
-          <long-description></long-description>
-        </docblock>
-      </property>
-      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="24" package="Codex\AuthHook">
-        <name>$configFiles</name>
-        <full_name>\Codex\Hooks\Auth\HookServiceProvider::configFiles</full_name>
-        <default>array('codex.hooks.auth')</default>
         <docblock line="24">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
       <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="26" package="Codex\AuthHook">
-        <name>$viewDirs</name>
-        <full_name>\Codex\Hooks\Auth\HookServiceProvider::viewDirs</full_name>
-        <default>array('views' =&gt; 'codex/auth')</default>
+        <name>$configFiles</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::configFiles</full_name>
+        <default>array('codex.hooks.auth')</default>
         <docblock line="26">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
       <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="28" package="Codex\AuthHook">
-        <name>$providers</name>
-        <full_name>\Codex\Hooks\Auth\HookServiceProvider::providers</full_name>
-        <default>array(\Codex\Hooks\Auth\Providers\ConsoleServiceProvider::class, \Codex\Hooks\Auth\Providers\RouteServiceProvider::class, \Laravel\Socialite\SocialiteServiceProvider::class)</default>
+        <name>$viewDirs</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::viewDirs</full_name>
+        <default>array('views' =&gt; 'codex/auth')</default>
         <docblock line="28">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="34" package="Codex\AuthHook">
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="30" package="Codex\AuthHook">
+        <name>$providers</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::providers</full_name>
+        <default>array(\Codex\Hooks\Auth\Providers\ConsoleServiceProvider::class, \Codex\Hooks\Auth\Providers\RouteServiceProvider::class, \Laravel\Socialite\SocialiteServiceProvider::class)</default>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="36" package="Codex\AuthHook">
+        <name>$singletons</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::singletons</full_name>
+        <default>array('codex.hooks.auth' =&gt; \Codex\Hooks\Auth\Manager::class)</default>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="40" package="Codex\AuthHook">
+        <name>$aliases</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::aliases</full_name>
+        <default>array('codex.hooks.auth' =&gt; \Codex\Hooks\Auth\Contracts\Manager::class)</default>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth" line="44" package="Codex\AuthHook">
+        <name>$bindings</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::bindings</full_name>
+        <default>array('codex.hooks.auth.project' =&gt; \Codex\Hooks\Auth\ProjectAuth::class)</default>
+        <docblock line="44">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="48" package="Codex\AuthHook">
         <name>register</name>
         <full_name>\Codex\Hooks\Auth\HookServiceProvider::register()</full_name>
-        <docblock line="34">
+        <docblock line="48">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="68" package="Codex\AuthHook">
+        <name>boot</name>
+        <full_name>\Codex\Hooks\Auth\HookServiceProvider::boot()</full_name>
+        <docblock line="68">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -672,13 +1003,17 @@
     </class>
     <parse_markers>
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
-      <error line="34" code="PPC:ERR-50008">No summary for method register()</error>
-      <error line="22" code="PPC:ERR-50007">No summary for property $dir</error>
-      <error line="24" code="PPC:ERR-50007">No summary for property $configFiles</error>
-      <error line="26" code="PPC:ERR-50007">No summary for property $viewDirs</error>
-      <error line="28" code="PPC:ERR-50007">No summary for property $providers</error>
+      <error line="48" code="PPC:ERR-50008">No summary for method register()</error>
+      <error line="68" code="PPC:ERR-50008">No summary for method boot()</error>
+      <error line="24" code="PPC:ERR-50007">No summary for property $dir</error>
+      <error line="26" code="PPC:ERR-50007">No summary for property $configFiles</error>
+      <error line="28" code="PPC:ERR-50007">No summary for property $viewDirs</error>
+      <error line="30" code="PPC:ERR-50007">No summary for property $providers</error>
+      <error line="36" code="PPC:ERR-50007">No summary for property $singletons</error>
+      <error line="40" code="PPC:ERR-50007">No summary for property $aliases</error>
+      <error line="44" code="PPC:ERR-50007">No summary for property $bindings</error>
     </parse_markers>
-    <source>eJyFU01vGjEQvftXzCHSEkTYtlIvS5K2gkaN1FZV4NaNkGMPu27M2rK9BBTlv9c2XkgIbXyyZ96bjzee80+61oQ0dIlWU4YwVhzX5Tel7m35pXX1iJDWduaxMljODBXOlr+MWgmONnpGz0B7brqOVeOMkhLNRLF2iY0L9v9Srihzymz2uCnePQiH5bTVWhlXTtGsBMNUhPFV5v0+gT7MaoQlFQ3YLQJ0gnhn8H+mPosykE6KGz1M6Y0RVe2iZ7x79dgpfHj3/uPgBVr64I2vbHtq57Qt8txJbiRWVA6ZWuYJky+FO+vwP65nke/VvqdVx9/qEBQIPXtATpik1kJ4HjQLuHbYcAsHdvJIQqgg18Fwot0L4ZA55HDChYELmM8n1zfz+Ws3U81CVFdCovWw35CxEGZYh9EMg34Z3L5mrQQ+TIRJlPCyGVxcJnb+T143oEgk3WC6puL3sUriQbNFEfUZHCHcqNa9CS+/U0NXKMupYoLK+Le623FupO7qb+/8QGHRNswJ1YDBSliHpnca3Y+7PCdUa9+Ypsb/+6LY40Z7iKuFPbuknMfKfdo/XpqffiW/rplsrY9ve1nU7ygrDjn8k1622O6NT0P5JhvAsz1KXbwVge2WteBpW32c4yv8MuQTeSJ/Aa7na2I=</source>
+    <source>eJyNVV1P2zAUfc+v8ANSAurHNmkvYXSgdmhIY5oo2wtFlevcNh6ubdlOASH++66dpE3bsJInx/fc4+tzb06+fNW5jiJJl2A1ZUCGKoOnyXelHuzkonD5aRQVtt4eKgOTX0b9BeZOd/dvDeXO+vCKZ2BDpAnacFbLoZLOKCHAjBQrliCd3/9vyiVlTpnnDe5KiGLJJXVQ0mEcUaqQGXVcycmF1oKzsC4TxjB75IgeF1or4yZjMCvOoKra4HX7JycROSG3OZAl5ZLYEkF0BcGgj59TLEsZUj0Vb4gwpZ8NX+QuRIbrt4Qdk08fPn7ubKGxPpBYWfnkzmmb9vtOZEbAgooeU8t+hekvuevW+Our25CPbXugizq/FM5L5kVCQD9iglpL/OvOZQk8OZCZJTv70UvkqbxcO90M+yiEwwGAjBxl3JAzMp2Orm6m0/0wU3LOF5dcgEXYHYmZp+nlvpc9r19M7vezVhweR9xUKf7NxuRsUGX338yrGxQSo7ox9aXCvFklYOeyaRr06bQk3KjCHYRPflBDVyAmY8U4FWG26lV7bkhtqd9yuRDgsMqtC7SIhmJcU4lNP0SJVVAL7+HbfD3vY55xmWG9B6h7ujSLcERlHH42W8mLGY42mReS+c+VGFhw68AkxyH8sj7liGqNx2pq0DLSdIOriALG5dx2BzTLQhOro3+izX17YqKweIBN4nB7TNvPCvPuP5kknpeeg+fQ7DnukIYHVdc4xMDWRpdmldMhT7v9bSibA+mLT9MlZUYl8QKChkix1io5buizXvgH3Yycr6ipWcoKvS00UQZcYWRdva8XnQ9Md7CkD5C83dZOo/nrIWj2PDBuQe4bar22KKf1XQwrVMPG992B8K2VSWx8F01vBnP81bx5c/8gwX7B8XF3YHMcmN/o5iPqaNJSxWv7HM6UcodmsMScboW3xPMF4B667RgCrf2DvpY0LC1NbRXp5ThpKL5TuotjUfgJjaoKX6N/83hq5w==</source>
   </file>
   <package name="Codex" full_name="Codex">
     <package name="AuthHook" full_name="Codex\AuthHook"/>
@@ -691,6 +1026,7 @@
     <namespace name="Hooks" full_name="Codex\Hooks">
       <namespace name="Auth" full_name="Codex\Hooks\Auth">
         <namespace name="Console" full_name="Codex\Hooks\Auth\Console"/>
+        <namespace name="Contracts" full_name="Codex\Hooks\Auth\Contracts"/>
         <namespace name="Hooks" full_name="Codex\Hooks\Auth\Hooks"/>
         <namespace name="Http" full_name="Codex\Hooks\Auth\Http">
           <namespace name="Controllers" full_name="Codex\Hooks\Auth\Http\Controllers"/>

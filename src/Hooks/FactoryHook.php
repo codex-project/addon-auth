@@ -21,6 +21,6 @@ class FactoryHook implements Hook
 {
     public function handle(Codex $codex)
     {
-        $codex->mergeDefaultProjectConfig('codex.hooks.git.default_project_config');
+        $codex->mergeDefaultProjectConfig('codex.hooks.auth.default_project_config');
     }
 }

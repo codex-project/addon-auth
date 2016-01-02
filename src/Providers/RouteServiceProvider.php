@@ -43,8 +43,8 @@ class RouteServiceProvider extends ServiceProvider
             'as'        => 'codex.hooks.auth.',
             'prefix'    => config('codex.base_route') . '/auth',
             'namespace' => $this->namespace
-        ], function ($router)
-        {
+        ], function ($router) {
+        
             require __DIR__ . '/../Http/routes.php';
         });
     }

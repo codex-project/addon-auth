@@ -5,7 +5,7 @@
     :: Login
 @stop
 
-@section('pageTitle', 'Login')
+@section('page-title', 'Login')
 
 @push('styles')
 <style type="text/css">
@@ -21,6 +21,7 @@
     <form id="form-login" class="form-horizontal" method="POST" action="{{ URL::current() }}">
         {!! csrf_field() !!}
 
+        @if(app('codex.hooks.auth')->isValidProvider('local'))
         <div class="form-group">
             <label class="control-label col-md-4" for="email">Email</label>
 
@@ -45,13 +46,28 @@
 
         <div class="form-group">
             <div class="col-md-offset-4 col-md-8">
-                <button type="submit" class="btn btn-default">Login</button>
-                <button id="auto-login" type="button" class="btn btn-primary">Auto fill &amp; login</button>
-                @foreach(config('codex.hooks.auth.providers') as $provider)
-                    <a href="{{ route('codex.hooks.auth.login.social', compact('provider')) }}" class="btn btn-primary">
-                        Login with {{ ucfirst($provider) }}
-                    </a>
-                @endforeach
+                <button type="submit" class="btn btn-success btn-block">Login</button>
+            </div>
+        </div>
+        @endif
+
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-8">
+                <div class="btn-group mt-xs">
+                    @foreach(app('codex.hooks.auth')->getProviders() as $provider)
+                        @if(!app('codex.hooks.auth')->isLoggedIn($provider))
+                            <a href="{{ route('codex.hooks.auth.social.login', compact('provider')) }}" class="btn btn-primary btn-block">
+                                Login with {{ ucfirst($provider) }}
+                            </a>
+                        @endif
+                    @endforeach
+
+                        @foreach(app('codex.hooks.auth')->getLoggedInProviders() as $provider)
+                            <a href="{{ route('codex.hooks.auth.social.logout', compact('provider')) }}" class="btn btn-warning btn-block">
+                                Logout {{ app('codex.hooks.auth')->getUser($provider)->getName() }} @ {{ ucfirst($provider) }}
+                            </a>
+                        @endforeach
+                </div>
             </div>
         </div>
     </form>

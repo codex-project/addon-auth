@@ -7,7 +7,8 @@
     Route::post('login', [ 'as' => 'login', 'uses' => 'AuthController@postLogin' ]);
 
 
-Route::group(['as' => 'login.', 'prefix' => 'login/{provider}'], function () {
-    Route::get('/', [ 'as' => 'social', 'uses' => 'SocialAuthController@redirectToProvider' ]);
-    Route::any('callback', [ 'as' => 'social.callback', 'uses' => 'SocialAuthController@handleProviderCallback' ]);
-});
+    Route::group(['as' => 'social.', 'prefix' => 'social/{provider}'], function () {
+        Route::get('login', [ 'as' => 'login', 'uses' => 'SocialAuthController@redirectToProvider' ]);
+        Route::any('login/callback', [ 'as' => 'login.callback', 'uses' => 'SocialAuthController@handleProviderCallback' ]);
+        Route::get('logout', [ 'as' => 'logout', 'uses' => 'SocialAuthController@getLogout' ]);
+    });

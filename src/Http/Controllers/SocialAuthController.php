@@ -10,9 +10,8 @@ use App\User;
 use Codex\Core\Contracts\Codex;
 use Codex\Core\Contracts\Menus\MenuFactory;
 use Codex\Core\Http\Controllers\Controller;
+use Codex\Hooks\Auth\Contracts\Manager;
 use Illuminate\Contracts\View\Factory as ViewFactory;
-use Illuminate\Session\SessionInterface;
-use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
 
 /**
  * This is the class AuthController.
@@ -23,9 +22,7 @@ use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
  */
 class SocialAuthController extends Controller
 {
-    protected $social;
-
-    protected $session;
+    protected $manager;
 
     /**
      * Create a new authentication controller instance.
@@ -33,20 +30,21 @@ class SocialAuthController extends Controller
      * @param \Codex\Core\Contracts\Codex             $codex
      * @param \Codex\Core\Contracts\Menus\MenuFactory $menu
      * @param \Illuminate\Contracts\View\Factory      $view
-     * @param \Laravel\Socialite\Contracts\Factory    $social
-     * @param \Illuminate\Session\SessionInterface    $session
+     * @param \Codex\Hooks\Auth\Contracts\Manager     $manager
+     *
+     * @internal param \Laravel\Socialite\Contracts\Factory $social
+     * @internal param \Illuminate\Session\SessionInterface $session
      */
-    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, SocialAuthFactory $social, Store)
+    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, Manager $manager)
     {
         parent::__construct($codex, $menu, $view);
-        $this->social = $social;
-        $this->session = $session;
+        $this->manager = $manager;
         $this->middleware('guest', [ 'except' => 'getLogout' ]);
     }
 
     protected function validateProviderName($provider, $abort = true)
     {
-        $valid = in_array($provider, config('codex.hooks.auth.providers'), true);
+        $valid = $this->manager->isValidProvider($provider);
         if (!$valid && $abort) {
             abort(403, 'Not a valid provider');
         }
@@ -60,7 +58,8 @@ class SocialAuthController extends Controller
     public function redirectToProvider($provider)
     {
         $this->validateProviderName($provider);
-        return $this->social->driver($provider)->scopes(['user', 'user:email', 'read:org'])->redirect();
+
+        return $this->manager->redirect($provider);
     }
 
     /**
@@ -71,9 +70,18 @@ class SocialAuthController extends Controller
     public function handleProviderCallback($provider)
     {
         $this->validateProviderName($provider);
-        $user = $this->social->driver($provider)->user();
-        $this->session->set('login', $provider);
-        return redirect()->route('codex.index');
+        $this->manager->callback($provider);
+
+        return redirect()->route('codex.hooks.auth.login');
         // $user->token;
+    }
+
+
+    public function getLogout($provider)
+    {
+        $this->validateProviderName($provider);
+        $this->manager->logout($provider);
+
+        return redirect()->route('codex.hooks.auth.login');
     }
 }

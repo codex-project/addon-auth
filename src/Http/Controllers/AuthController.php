@@ -10,11 +10,11 @@ use App\User;
 use Codex\Core\Contracts\Codex;
 use Codex\Core\Contracts\Menus\MenuFactory;
 use Codex\Core\Http\Controllers\Controller;
+use Codex\Hooks\Auth\Contracts\Manager;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
 
 /**
  * This is the class AuthController.
@@ -29,11 +29,22 @@ class AuthController extends Controller
 
     protected $redirectPath = '/dashboard';
 
-    protected $social;
+    protected $manager;
 
     public function getLogin()
     {
         return view('codex/auth::login');
+    }
+
+    public function getLogout()
+    {
+        foreach ($this->manager->getLoggedInProviders() as $provider) {
+            $this->manager->logout($provider);
+        }
+
+        \Auth::logout();
+
+        return redirect()->route('codex.hooks.auth.login');
     }
 
 
@@ -45,25 +56,26 @@ class AuthController extends Controller
      * @param \Illuminate\Contracts\View\Factory      $view
      * @param \Laravel\Socialite\Contracts\Factory    $social
      */
-    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, SocialAuthFactory $social)
+    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, Manager $manager)
     {
         parent::__construct($codex, $menu, $view);
-        $this->social = $social;
+        $this->manager = $manager;
 
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', [ 'except' => 'getLogout' ]);
     }
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -71,15 +83,16 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
+     *
      * @return User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'name'     => $data[ 'name' ],
+            'email'    => $data[ 'email' ],
+            'password' => bcrypt($data[ 'password' ]),
         ]);
     }
 }

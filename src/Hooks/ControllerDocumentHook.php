@@ -8,7 +8,10 @@ namespace Codex\Hooks\Auth\Hooks;
 
 use Codex\Core\Contracts\Codex;
 use Codex\Core\Contracts\Hook;
+use Codex\Core\Document;
 use Codex\Core\Http\Controllers\CodexController;
+use Codex\Core\Project;
+use Sebwite\Support\Html;
 
 /**
  * This is the class ControllerDocumentHook.
@@ -27,16 +30,20 @@ class ControllerDocumentHook implements Hook
         $this->codex = $codex;
     }
 
-    public function handle(CodexController $controller, $projectSlug, $ref, $path)
+    public function handle(CodexController $controller, Project $project, Document $document, $ref = '', $path = '')
     {
-        if (!$this->codex->hasProject($projectSlug)) {
+        if (!$project->hasEnabledHook('auth')) {
             return;
         }
 
-        $project = $this->codex->getProject($projectSlug);
+        /** @var \Codex\Hooks\Auth\ProjectAuth $auth */
+        $auth    = $project->getAuth();
+        $allowed = $auth->isAllowed();
 
-        if (!$project->hasEnabledHook('auth')) {
-            return;
+        if (!$allowed) {
+            $provider = $auth->getProvider();
+            $link = Html::linkRoute('codex.hooks.auth.social.login', ucfirst($provider), compact('provider'), ['target' => '_blank']);
+            return redirect()->back()->withErrors('You need to login to ' . $link . ' and be in one of the allowed groups.');
         }
     }
 }
