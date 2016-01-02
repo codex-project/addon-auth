@@ -10,10 +10,7 @@ use App\User;
 use Codex\Core\Contracts\Codex;
 use Codex\Core\Contracts\Menus\MenuFactory;
 use Codex\Core\Http\Controllers\Controller;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Contracts\View\Factory as ViewFactory;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
 
 /**
@@ -23,19 +20,9 @@ use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
  * @author         Sebwite
  * @copyright      Copyright (c) 2015, Sebwite. All rights reserved
  */
-class AuthController extends Controller
+class SocialAuthController extends Controller
 {
-    use AuthenticatesUsers, ThrottlesLogins;
-
-    protected $redirectPath = '/dashboard';
-
     protected $social;
-
-    public function getLogin()
-    {
-        return view('codex/auth::login');
-    }
-
 
     /**
      * Create a new authentication controller instance.
@@ -50,36 +37,37 @@ class AuthController extends Controller
         parent::__construct($codex, $menu, $view);
         $this->social = $social;
 
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', [ 'except' => 'getLogout' ]);
+    }
+
+    protected function validateProviderName($provider, $abort = true)
+    {
+        $valid = in_array($provider, config('codex.hooks.auth.providers'), true);
+        if (!$valid && $abort) {
+            abort(403, 'Not a valid provider');
+        }
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Redirect the user to the GitHub authentication page.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \Response
      */
-    protected function validator(array $data)
+    public function redirectToProvider($provider)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
+        $this->validateProviderName($provider);
+        return $this->social->driver($provider)->redirect();
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Obtain the user information from GitHub.
      *
-     * @param  array  $data
-     * @return User
+     * @return \Response
      */
-    protected function create(array $data)
+    public function handleProviderCallback($provider)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $this->validateProviderName($provider);
+        $user = $this->social->driver($provider)->user();
+        // $user->token;
     }
 }

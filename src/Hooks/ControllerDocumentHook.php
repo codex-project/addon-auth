@@ -32,8 +32,10 @@ class ControllerDocumentHook implements Hook
         if (!$this->codex->hasProject($projectSlug)) {
             return;
         }
+
         $project = $this->codex->getProject($projectSlug);
-        if ($project->config('enable_auth_hook', false) !== true) {
+
+        if (!$project->hasEnabledHook('auth')) {
             return;
         }
     }

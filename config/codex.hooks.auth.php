@@ -1,11 +1,13 @@
 <?php
 
 return [
-    'enabled'                => false,
+    'providers' => [ 'github', 'bitbucket', 'google' ],
+
     'default_project_config' => [
-        'enable_auth_hook'   => false,
-        'auth_hook_settings' => [
-            'allow' => []
+        'hooks' => [
+            'auth' => [
+                'allow' => [ ]
+            ]
         ]
     ]
 ];

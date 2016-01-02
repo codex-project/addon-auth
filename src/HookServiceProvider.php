@@ -27,7 +27,8 @@ class HookServiceProvider extends ServiceProvider
 
     protected $providers = [
         Providers\ConsoleServiceProvider::class,
-        Providers\RouteServiceProvider::class
+        Providers\RouteServiceProvider::class,
+        \Laravel\Socialite\SocialiteServiceProvider::class
     ];
 
     public function register()

@@ -2,14 +2,16 @@
 
 @section('title')
     @parent
-    Register
+    :: Login
 @stop
+
+@section('pageTitle', 'Login')
 
 @section('bodyClass', 'page-loading page-header-fixed page-footer-fixed page-edged page-sidebar-closed page-sidebar-hide')
 
-@section('content')
+@section('page-header-sidebar-toggle', ' ')
 
-    <h1>Login</h1>
+@section('content')
 
     <form id="form-login" class="form-horizontal" method="POST" action="{{ URL::current() }}">
         {!! csrf_field() !!}

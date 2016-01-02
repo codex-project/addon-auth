@@ -6,9 +6,8 @@
  */
 namespace Codex\Hooks\Auth\Hooks;
 
+use Codex\Core\Contracts\Codex;
 use Codex\Core\Contracts\Hook;
-use Codex\Core\Factory as CodexFactory;
-use Illuminate\Contracts\Config\Repository;
 
 /**
  * This is the Hook.
@@ -20,27 +19,8 @@ use Illuminate\Contracts\Config\Repository;
  */
 class FactoryHook implements Hook
 {
-    /**
-     * @var \Illuminate\Contracts\Config\Repository
-     */
-    protected $config;
-
-    /**
-     * @param \Illuminate\Contracts\Config\Repository $config
-     *
-     */
-    public function __construct(Repository $config)
+    public function handle(Codex $codex)
     {
-        $this->config = $config;
-    }
-
-    public function handle(CodexFactory $codex)
-    {
-        $codex->setConfig(
-            array_replace_recursive(
-                $codex->config(),
-                $this->config->get('codex.hooks.git.default_project_config')
-            )
-        );
+        $codex->mergeDefaultProjectConfig('codex.hooks.git.default_project_config');
     }
 }
