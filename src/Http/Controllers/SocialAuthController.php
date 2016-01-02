@@ -8,7 +8,6 @@ namespace Codex\Hooks\Auth\Http\Controllers;
 
 use App\User;
 use Codex\Core\Contracts\Codex;
-use Codex\Core\Contracts\Menus\MenuFactory;
 use Codex\Core\Http\Controllers\Controller;
 use Codex\Hooks\Auth\Contracts\Manager;
 use Illuminate\Contracts\View\Factory as ViewFactory;
@@ -35,9 +34,9 @@ class SocialAuthController extends Controller
      * @internal param \Laravel\Socialite\Contracts\Factory $social
      * @internal param \Illuminate\Session\SessionInterface $session
      */
-    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, Manager $manager)
+    public function __construct(Codex $codex, ViewFactory $view, Manager $manager)
     {
-        parent::__construct($codex, $menu, $view);
+        parent::__construct($codex, $view);
         $this->manager = $manager;
         $this->middleware('guest', [ 'except' => 'getLogout' ]);
     }

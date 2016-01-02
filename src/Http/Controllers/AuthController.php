@@ -8,7 +8,6 @@ namespace Codex\Hooks\Auth\Http\Controllers;
 
 use App\User;
 use Codex\Core\Contracts\Codex;
-use Codex\Core\Contracts\Menus\MenuFactory;
 use Codex\Core\Http\Controllers\Controller;
 use Codex\Hooks\Auth\Contracts\Manager;
 use Illuminate\Contracts\Validation\Validator;
@@ -31,6 +30,25 @@ class AuthController extends Controller
 
     protected $manager;
 
+    /**
+     * Create a new authentication controller instance.
+     *
+     * @param \Codex\Core\Contracts\Codex         $codex
+     * @param \Illuminate\Contracts\View\Factory  $view
+     * @param \Codex\Hooks\Auth\Contracts\Manager $manager
+     *
+     * @internal param \Codex\Core\Contracts\Menus\MenuFactory $menu
+     * @internal param \Laravel\Socialite\Contracts\Factory $social
+     */
+    public function __construct(Codex $codex, ViewFactory $view, Manager $manager)
+    {
+        parent::__construct($codex, $view);
+        $this->manager = $manager;
+
+        $this->middleware('guest', [ 'except' => 'getLogout' ]);
+    }
+
+
     public function getLogin()
     {
         return view('codex/auth::login');
@@ -47,22 +65,6 @@ class AuthController extends Controller
         return redirect()->route('codex.hooks.auth.login');
     }
 
-
-    /**
-     * Create a new authentication controller instance.
-     *
-     * @param \Codex\Core\Contracts\Codex             $codex
-     * @param \Codex\Core\Contracts\Menus\MenuFactory $menu
-     * @param \Illuminate\Contracts\View\Factory      $view
-     * @param \Laravel\Socialite\Contracts\Factory    $social
-     */
-    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, Manager $manager)
-    {
-        parent::__construct($codex, $menu, $view);
-        $this->manager = $manager;
-
-        $this->middleware('guest', [ 'except' => 'getLogout' ]);
-    }
 
     /**
      * Get a validator for an incoming registration request.
