@@ -11,6 +11,7 @@ use Codex\Core\Contracts\Codex;
 use Codex\Core\Contracts\Menus\MenuFactory;
 use Codex\Core\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory as ViewFactory;
+use Illuminate\Session\SessionInterface;
 use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
 
 /**
@@ -24,6 +25,8 @@ class SocialAuthController extends Controller
 {
     protected $social;
 
+    protected $session;
+
     /**
      * Create a new authentication controller instance.
      *
@@ -31,12 +34,13 @@ class SocialAuthController extends Controller
      * @param \Codex\Core\Contracts\Menus\MenuFactory $menu
      * @param \Illuminate\Contracts\View\Factory      $view
      * @param \Laravel\Socialite\Contracts\Factory    $social
+     * @param \Illuminate\Session\SessionInterface    $session
      */
-    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, SocialAuthFactory $social)
+    public function __construct(Codex $codex, MenuFactory $menu, ViewFactory $view, SocialAuthFactory $social, Store)
     {
         parent::__construct($codex, $menu, $view);
         $this->social = $social;
-
+        $this->session = $session;
         $this->middleware('guest', [ 'except' => 'getLogout' ]);
     }
 
@@ -56,7 +60,7 @@ class SocialAuthController extends Controller
     public function redirectToProvider($provider)
     {
         $this->validateProviderName($provider);
-        return $this->social->driver($provider)->redirect();
+        return $this->social->driver($provider)->scopes(['user', 'user:email', 'read:org'])->redirect();
     }
 
     /**
@@ -68,6 +72,8 @@ class SocialAuthController extends Controller
     {
         $this->validateProviderName($provider);
         $user = $this->social->driver($provider)->user();
+        $this->session->set('login', $provider);
+        return redirect()->route('codex.index');
         // $user->token;
     }
 }

@@ -5,6 +5,7 @@ namespace Codex\Hooks\Auth;
 use Codex\Core\Traits\ProvidesCodex;
 use Codex\Hooks\Auth\Hooks\ControllerDocumentHook;
 use Codex\Hooks\Auth\Hooks\FactoryHook;
+use Illuminate\View\View;
 use Sebwite\Support\ServiceProvider;
 
 /**
@@ -38,4 +39,12 @@ class HookServiceProvider extends ServiceProvider
         $this->addCodexHook('factory:ready', FactoryHook::class);
         $this->addCodexHook('controller:document', ControllerDocumentHook::class);
     }
+
+    public function boot()
+    {
+        $app = parent::boot();
+        $app->make('codex')->appendSectionsView('codex/auth::sections.header-actions-right');
+    }
+
+
 }

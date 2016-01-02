@@ -1,4 +1,4 @@
-@extends('codex::layouts.default')
+@extends('codex::layouts.no-sidebar')
 
 @section('title')
     @parent
@@ -7,9 +7,14 @@
 
 @section('pageTitle', 'Login')
 
-@section('bodyClass', 'page-loading page-header-fixed page-footer-fixed page-edged page-sidebar-closed page-sidebar-hide')
-
-@section('page-header-sidebar-toggle', ' ')
+@push('styles')
+<style type="text/css">
+    #form-login {
+        margin: 0px auto;
+        width: 500px;
+    }
+</style>
+@endpush
 
 @section('content')
 
@@ -42,6 +47,11 @@
             <div class="col-md-offset-4 col-md-8">
                 <button type="submit" class="btn btn-default">Login</button>
                 <button id="auto-login" type="button" class="btn btn-primary">Auto fill &amp; login</button>
+                @foreach(config('codex.hooks.auth.providers') as $provider)
+                    <a href="{{ route('codex.hooks.auth.login.social', compact('provider')) }}" class="btn btn-primary">
+                        Login with {{ ucfirst($provider) }}
+                    </a>
+                @endforeach
             </div>
         </div>
     </form>
@@ -50,8 +60,8 @@
 
 @push('scripts')
 <script>
-    $(function(){
-        $('#auto-login').on('click', function(e){
+    $(function () {
+        $('#auto-login').on('click', function (e) {
             e.preventDefault();
             $('#email').val('admin@radic.nl');
             $('#password').val('test1234');
