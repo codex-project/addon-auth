@@ -854,7 +854,7 @@
     </parse_markers>
     <source>eJx1kV1LwzAUhu/zK86FsA9cq4I3Tvxgm2wwZeAuByNLT9u4NAlJqg7ZfzdJW7cbQ2nanOe8Oec994+61CQdDgkMYUWNA5WDKxEmNM+RS+owg9V8BZqyPS3QJh4M7OtiDUvOUFoEKjNgSh8ML0oHXObKVNRxJWFXy0x4hS/uSi/LbafjqXjNcjGZvb3PIOcCvWxKJK3QeshXoDL83syV2tvNc+3K5nNMSG274EQZ9C/pDGXObuLh+P94EPD5bbfrUI5/Qhkh0nX21JXYrpNUjFJfijLwFz3zaYqfsEZaRe5kSKvS/fbZAG6urm8vz3Njimj9bFfpnLZ3aepEZgQWVCRMVWkLpRV3oy7hbBjRRCaotfDim1bmEHoDXmmBFUpnY6/kh4QbdL3zEpDXksVxlTSMqx87hgsWtkEEGzys5nT0UKEpcIo5rYVbGfWBzHmjc170e5FIyjCtJLiVZA221Q23ZRHsDcZR9UiO5BewSNGF</source>
   </file>
-  <file path="HookServiceProvider.php" generated-path="HookServiceProvider.html" hash="8d53c0c241493252991ed2df7fac3fb7" package="Default">
+  <file path="HookServiceProvider.php" generated-path="HookServiceProvider.html" hash="f4a552c7bdf5bc47d7f6e699e21a3144" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -970,7 +970,7 @@
       <error line="40" code="PPC:ERR-50007">No summary for property $aliases</error>
       <error line="44" code="PPC:ERR-50007">No summary for property $bindings</error>
     </parse_markers>
-    <source>eJyNVV1P2zAUfc+v8ANSAurHNmkvYXSgdmhIY5oo2wtFlevcNh6ubdlOASH++66dpE3bsJInx/fc4+tzb06+fNW5jiJJl2A1ZUCGKoOnyXelHuzkonD5aRQVtt4eKgOTX0b9BeZOd/dvDeXO+vCKZ2BDpAnacFbLoZLOKCHAjBQrliCd3/9vyiVlTpnnDe5KiGLJJXVQ0mEcUaqQGXVcycmF1oKzsC4TxjB75IgeF1or4yZjMCvOoKra4HX7JycROSG3OZAl5ZLYEkF0BcGgj59TLEsZUj0Vb4gwpZ8NX+QuRIbrt4Qdk08fPn7ubKGxPpBYWfnkzmmb9vtOZEbAgooeU8t+hekvuevW+Our25CPbXugizq/FM5L5kVCQD9iglpL/OvOZQk8OZCZJTv70UvkqbxcO90M+yiEwwGAjBxl3JAzMp2Orm6m0/0wU3LOF5dcgEXYHYmZp+nlvpc9r19M7vezVhweR9xUKf7NxuRsUGX338yrGxQSo7ox9aXCvFklYOeyaRr06bQk3KjCHYRPflBDVyAmY8U4FWG26lV7bkhtqd9yuRDgsMqtC7SIhmJcU4lNP0SJVVAL7+HbfD3vY55xmWG9B6h7ujSLcERlHH42W8mLGY42mReS+c+VGFhw68AkxyH8sj7liGqNx2pq0DLSdIOriALG5dx2BzTLQhOro3+izX17YqKweIBN4nB7TNvPCvPuP5kknpeeg+fQ7DnukIYHVdc4xMDWRpdmldMhT7v9bSibA+mLT9MlZUYl8QKChkix1io5buizXvgH3Yycr6ipWcoKvS00UQZcYWRdva8XnQ9Md7CkD5C83dZOo/nrIWj2PDBuQe4bar22KKf1XQwrVMPG992B8K2VSWx8F01vBnP81bx5c/8gwX7B8XF3YHMcmN/o5iPqaNJSxWv7HM6UcodmsMScboW3xPMF4B667RgCrf2DvpY0LC1NbRXp5ThpKL5TuotjUfgJjaoKX6N/83hq5w==</source>
+    <source>eJyNVd9v2jAQfs9f4YdJCRU/tkl7SVfWClat0jpNpXsqFTLOQbwa27Id2qrq/76zk0CAdDRPwffd5+++uxxfv+lcR5GkK7CaMiAjlcHT9IdSD3Z6Ubj8NIoKWx+PlIHpb6P+AnOn++e3hnJnfXjNM7Ah0gRtOavXkZLOKCHAjBUrViCdP/9vyiVlTpnnLe5KiGLFJXVQ0mEcUaqQGXVcyemF1oKz8F4mTGD+yBE9KbRWxk0nYNacQaXaYLmDk5OInJDbHMiKcklsiSC6gmDQx88pylKGVE/FGyJM6WfDl7kLkdHmV8I65PPHT1+6O2jUBxKVlU/unLbpYOBEZgQsqegztRpUmMGKu16Nv766DfnYtge6rPNL47xl3iQEDCImqLXE/9wrlsCTA5lZsncevUSeytu1181wjkY4HADIyIeMG3JGZrPx1c1sdhhmSi748pILsAi7IzHzNP3c97Lv/YvJ/WHWmsPjmJsqxf+yMTkbVtmDN/PqBoXEqG5MXVSYN6sE7BWbpsGfbkvCjSrcUfj0JzV0DWI6UYxTEWarfmvPDakt+i2XSwEOVe4U0GIamnFNJTb9GCWqoBbew7f9et7HPOcyQ71HqPu6XBbhimpx+NlsJS/mONpkUUjmP1diYMmtA5N0Qvhlc8sHqjVeq6nBlZGmW1xFFDAu57Y3pFkWmlhd/QvX3PcnJgqLF9gkDtVj2mFWmHf/ySTxotw5eA/NnuMuaeygqoxjDGyz6NKs2nTI077+tpTNgfTi03RFmVFJvITgIVJsvEo66M8mwT+4xcj5mpo6u1Tm10ETZcAVRtaqvU7ceGB6wxV9gOTtdnYbTd80v9nrwLgDuW+49NrimNZ3MazRBRvf94bCt1QmsfHdM/05LPAv5qDiJj8SHAqOO72hzXFQ/uAWH1NHkxYVr+3zN1fKHZu9EnO6E94xLwhwuKGTxvZKUwvhDtvPcajQb6d0Dyeg8MMYVaJeo39wumSi</source>
   </file>
   <package name="Codex" full_name="Codex">
     <package name="AuthHook" full_name="Codex\AuthHook"/>

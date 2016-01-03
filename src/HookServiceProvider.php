@@ -54,7 +54,7 @@ class HookServiceProvider extends ServiceProvider
         $this->addCodexHook('controller:document', ControllerDocumentHook::class);
 
         Project::macro('getAuth', function () {
-        
+
             /** @var Project $this */
             return $this->container->make('codex.hooks.auth.project', [
                 'project' => $this
@@ -68,7 +68,7 @@ class HookServiceProvider extends ServiceProvider
     public function boot()
     {
         $app = parent::boot();
-        $app->make('codex')->appendSectionsView('codex/auth::sections.header-top-menu');
+        $app->make('codex')->stack('codex/auth::sections.header-top-menu');
 
 
     }

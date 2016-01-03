@@ -7,6 +7,10 @@
 
 @section('page-title', 'Login')
 
+@push('header-actions')
+    @include('codex::partials/header-actions')
+@endpush
+
 @push('styles')
 <style type="text/css">
     #form-login {
