@@ -35,11 +35,23 @@ class Manager implements ManagerContract
 
     public function shareUserData()
     {
+        $view     = $this->container->make('view');
         if (count($this->getLoggedInProviders()) > 0) {
             $provider = $this->getLoggedInProviders()[ 0 ];
-            $view     = $this->container->make('view');
+
             $view->share('currentUser', $this->getUser($provider));
+
         }
+
+        $auths = collect();
+        foreach ($this->getProviders() as $provider) {
+            if ($this->isLoggedIn($provider)) {
+                $auths->put($provider, $this->getUser($provider));
+            } else {
+                $auths->put($provider, false);
+            }
+        }
+        $view->share('auths', $auths);
     }
 
     public function getProviders()

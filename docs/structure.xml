@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="API Documentation" version="v2.8.5">
   <partials/>
-  <file path="Manager.php" generated-path="Manager.html" hash="297a7c7f3210018eae41913901e8093c" package="Default">
+  <file path="Manager.php" generated-path="Manager.html" hash="6110e487424c59aa1063661196ca58e3" package="Default">
     <docblock line="0">
       <description>Part of the Sebwite PHP packages.</description>
       <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -65,18 +65,18 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="45" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="57" package="Codex\Hooks">
         <name>getProviders</name>
         <full_name>\Codex\Hooks\Auth\Manager::getProviders()</full_name>
-        <docblock line="45">
+        <docblock line="57">
           <description></description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="50" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="62" package="Codex\Hooks">
         <name>isValidProvider</name>
         <full_name>\Codex\Hooks\Auth\Manager::isValidProvider()</full_name>
-        <docblock line="50">
+        <docblock line="62">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -86,10 +86,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="55" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="67" package="Codex\Hooks">
         <name>redirect</name>
         <full_name>\Codex\Hooks\Auth\Manager::redirect()</full_name>
-        <docblock line="55">
+        <docblock line="67">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -99,10 +99,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="68" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="80" package="Codex\Hooks">
         <name>callback</name>
         <full_name>\Codex\Hooks\Auth\Manager::callback()</full_name>
-        <docblock line="68">
+        <docblock line="80">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -112,10 +112,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="82" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="94" package="Codex\Hooks">
         <name>isLoggedIn</name>
         <full_name>\Codex\Hooks\Auth\Manager::isLoggedIn()</full_name>
-        <docblock line="82">
+        <docblock line="94">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -125,10 +125,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="87" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="99" package="Codex\Hooks">
         <name>logout</name>
         <full_name>\Codex\Hooks\Auth\Manager::logout()</full_name>
-        <docblock line="87">
+        <docblock line="99">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -138,18 +138,18 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="92" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="104" package="Codex\Hooks">
         <name>getLoggedInProviders</name>
         <full_name>\Codex\Hooks\Auth\Manager::getLoggedInProviders()</full_name>
-        <docblock line="92">
+        <docblock line="104">
           <description></description>
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="104" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth" line="116" package="Codex\Hooks">
         <name>getUser</name>
         <full_name>\Codex\Hooks\Auth\Manager::getUser()</full_name>
-        <docblock line="104">
+        <docblock line="116">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -166,23 +166,23 @@
       <error line="29" code="PPC:ERR-50015">Argument $social is missing from the Docblock of __construct</error>
       <error line="29" code="PPC:ERR-50008">No summary for method __construct()</error>
       <error line="36" code="PPC:ERR-50008">No summary for method shareUserData()</error>
-      <error line="45" code="PPC:ERR-50008">No summary for method getProviders()</error>
-      <error line="50" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of isValidProvider</error>
-      <error line="50" code="PPC:ERR-50008">No summary for method isValidProvider()</error>
-      <error line="55" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirect</error>
-      <error line="55" code="PPC:ERR-50008">No summary for method redirect()</error>
-      <error line="68" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of callback</error>
-      <error line="68" code="PPC:ERR-50008">No summary for method callback()</error>
-      <error line="82" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of isLoggedIn</error>
-      <error line="82" code="PPC:ERR-50008">No summary for method isLoggedIn()</error>
-      <error line="87" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of logout</error>
-      <error line="87" code="PPC:ERR-50008">No summary for method logout()</error>
-      <error line="92" code="PPC:ERR-50008">No summary for method getLoggedInProviders()</error>
-      <error line="104" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of getUser</error>
-      <error line="104" code="PPC:ERR-50008">No summary for method getUser()</error>
+      <error line="57" code="PPC:ERR-50008">No summary for method getProviders()</error>
+      <error line="62" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of isValidProvider</error>
+      <error line="62" code="PPC:ERR-50008">No summary for method isValidProvider()</error>
+      <error line="67" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirect</error>
+      <error line="67" code="PPC:ERR-50008">No summary for method redirect()</error>
+      <error line="80" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of callback</error>
+      <error line="80" code="PPC:ERR-50008">No summary for method callback()</error>
+      <error line="94" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of isLoggedIn</error>
+      <error line="94" code="PPC:ERR-50008">No summary for method isLoggedIn()</error>
+      <error line="99" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of logout</error>
+      <error line="99" code="PPC:ERR-50008">No summary for method logout()</error>
+      <error line="104" code="PPC:ERR-50008">No summary for method getLoggedInProviders()</error>
+      <error line="116" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of getUser</error>
+      <error line="116" code="PPC:ERR-50008">No summary for method getUser()</error>
       <error line="27" code="PPC:ERR-50007">No summary for property $social</error>
     </parse_markers>
-    <source>eJzVVk1v2zgQvftXzBYBJAWOmy2wl3jjNshm0QBpNkDaXuwgoKWxREQmBZJyGhT+7x1SoiTLioMeVzAsifPxhvNmhvr7Y5EVo/fHxyM4hjumDMgVmAzhHpfP3CDcfb6DgsVPLEU9ISWrd8NjFBqBiQRiWbwonmYGuFhJtWaGSwHLUiQ5JkAuMnLHtfdBWs79zfXl1e39Fax4juTy/UiwNWpSQriUCf5YfJbySS8uSpNNR6NS++VLqZD+hFEsNnrhFqd9+VfFuBe659c1hGFcoNrTauE7aF+YoC0oYBrqRy+rTK/zvFxzwcxuiDVG+1Rp3zDFNpgv7mXMWc53jP6lf6leLFIltpHUi5SPmq+vNrH0swmNc6absDxRn3zW66uzNydm5FUqL/WcO1HLa23pX8M4gg+nf/419uoTuMhzcEINCjWqDSaO052YgK+LHNcozF72Rj9HFqPJvmNjDH12nFKhpMHYUG0daZcZv14ucx7DqhSxq8DHx1gKbVQZm7BxBEexfxxXUHaFbuP9NHv/kXNfRWivI1vOJzONpnEbtm6j6aAiQYQV0oCCg4HzdkNWuB3els6Ywm+U43+YYWE/Nr4iemQpTFj7TtHcyDTF5FrcKbnhCSodRhHM4DTq2LloilrBRnLIeg6n8DDdtd1wfHZPjW2TkZPZmj1hGFiVIBqwowzYTYVBXCpF5WF3F4w7MdiFsAkv6vjYHkoVWXai7mVKoSmVoOklVjwlaEvNJLONMbFNMfFomiKZw0N0kBSuv1MDJx6tE+swKhePTCn20ip2t9sJegxUwHgYXGHCFXXE66i2Kv6o/b8ear8eTKbkMwjidXEtNtboQqWl7d+rHzEWFjt8dysNMHBSaOpn/rPxun14t0eXIz5RfNMttar0T2bVeies6c42OkV6fg5BSsdLuQz2SrnyQl5piqEO5xCUVVG5+xmuGc/tm0KWnEmVBg3DnUR3CGscNsk+zEnM8nxJo/d/yUl1/Q4zRzarTZDnbbrsethVJMKgo8iKIgx0fYyQLIjc4BDo0vg6FvWJkmWhLRaZncxyrs1/KmWCa/cBokOvh+aWx0/26yK0k6Pxs7hHrUnz7KwoTRjkMuViEsAEOj3Zab4BEwvQt3Cobw0LP1PfnBMtYMb0YIyHochAlgcGQ+ufvtwoU7ZRBhMxsNe3ZuLw2dE/S5sxS0zOu6cKBYQsziAcnIv2u6jdVa9J3JzwnTWQ677+biDzB1tU/nX3uNoeGhGNh7fS0jvOBgbD70S/VyqWxwG+Bk7N7egXkMSrgA==</source>
+    <source>eJzVVk1v4zYQvetXTBcGJAW2Ny3QS1K7DdIUGyCbBsi2FzsIaImWiMikQFLOBgv/9w4pUaJl2eleClQwbIozfG++6V9+LfMy+Hh2FsAZPBCpQaxB5xQe6eqVaQoPnx6gJMkLyaiaopLRu2MJ5YoC4SkkonyTLMs1ML4WckM0ExxWFU8LmgJC5AjHlMNALQt/d3t9c/94A2tWUIT8GHCyoQqVKFyLlH5dfhLiRS2vKp1fBkGl3Pa1kBS/uJYk0WppNy/78i+SMCe06+MaXBPGqTzQ6ug9ts+EowsSiIJm6WT10duiqDaME71vYsPRrWrtOyLJlhbLR5EwUrC9Q3/gt5BvhqkWG0uaTYxHk68vJrD4MQFNCqJas1yifnNRbx7PNysmiCqkk7qcW1GX1+ake42SGH46//HnsVOfwlVRgBUqkFRRuaWpzemeTcA2ZUE3lOuD6AXfAsPRRt9mYwz97FilUgpNE421NVI2Mm6/WhUsgXXFE1uBz8+J4ErLKtFRCwSjxC3HNZXZwZ/xYZgdfmzhawvNMzLlPJkrqlvYqIONLwcVkSKqmQYULA3MOoeMcDfslsqJpH9hjH8nmkQHtm0ZfbWrmUNvLZvMN+SFRqFRCT0r2BpTKiquo+ZERvWdyDKa3vIHKbYspVJFcQxzOI89LstXNgod3/DpBZzDU5OpPWPRfeNRFCaVlFgbxrVw7IGZjajliWMPZNctR6aSFVqRiKLA8og8B3EqUZLk4PnnWWZarIPv+Wdi05xiyrnlW9PT70yZzMtKd5qnPfKP74AW2Af/GndNUL2PERyu9qNtsUyc7SI+WXL78epVnKS6khzDztcswyyaEp/mZsBMDfTUGWrIFvB0mompv3EQpo7NC9IwK+PPREryNhxnz+gx4CCgp8klTZk0pXOU1VTDD205HDO1XxM6l+IVOPbl8pZvzaErmVVmDt58TWhpuKMP90IDASuFtqcW31rU3dMHL8deVlPJtn771SNkMq/3PbP2G95r3NkMwgyv6WoVHrR3jYKoeBtQFS0grOr+tL8XdENYYd6wwdILIbOwzbAXaC9hLWAb7NM5SUhRrPAK+1/mpH6+JzMjE9XWyFkXLrPvj7QRJgw8RVKWUaia6xhlYWwHP6c2jMe5sE+kqEozOA3kZF4wpf+UGeFM2T9yKnJ6VN+z5MX8S4v2hvDykSqFmhcXZjCFhcgYn4YwBa8nveYbOGII+ics63vDYmAgD8+JjjAnatDG01R4QFQnBkOHj3cNRso0ymAgBnx9byYO36f9e78ds5jJhblpneS/vvxaQxZPpqjc6/H76WBEtAjvhaV3jw4Mhu+x/qBUTB4H8nXQ8rtgF/wD1jYECA==</source>
   </file>
   <file path="Contracts/Manager.php" generated-path="Contracts.Manager.html" hash="b30f977b94e22721ceb7b40c4cf20d0d" package="Default">
     <docblock line="0">
@@ -663,15 +663,36 @@
     </parse_markers>
     <source>eJydkU1PwzAMhu/5FTkgFSpoAIkLY3ztAgckpO1GOYTUNNHaJkq8sQnx34m7RHBgF6JKjRz7sf2+VzdOO8YG2UNwUgGf2QY29YO1y1DfrVDXz96uTQM+TBhbBeBzePswCPV85Zz1WM/sEGwHc/BroyBncxn4vQyQXnM4MkRZspIvtAk8fqip5V+EilHerYwzWM/TSc3pQVm39abVyCMgXw/VET8/Pbs4/p3ZReoQJx+PRnThUgjsGt9BK7tK2V6kFNEbPMnpT48Lqo6qLGWbqnfqkC6kECsFU50MYc8KHDYIQ/OnEuyTEZDUGMmx01rGPQN6M7QpJsa/8xZBITT84MenKS92wySvdmZlN4oo9D/wzsO72RBbEbvShK7IAlKpl3GXai9aei+3+8i5PLJfWHazQAhYxMv0mhdZ1AXFxpTXCfti3/H20UI=</source>
   </file>
-  <file path="Console/AuthHookTestCommand.php" generated-path="Console.AuthHookTestCommand.html" hash="8648c827b5e8790e5ba9ed7306dcb973" package="Default">
+  <file path="Authorizer.php" generated-path="Authorizer.html" hash="4eb1acf6b2c2da3b21cc073eaec9efde" package="Default">
+    <docblock line="0">
+      <description>Part of the Sebwite PHP packages.</description>
+      <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Codex\Hooks\Auth" line="11" package="Default">
+      <extends/>
+      <name>Authorizer</name>
+      <full_name>\Codex\Hooks\Auth\Authorizer</full_name>
+      <docblock line="11">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="11" description="Default"/>
+      </docblock>
+    </class>
+    <parse_markers>
+      <error line="11" code="PPC:ERR-50005">No summary for class \Codex\Hooks\Auth\Authorizer</error>
+    </parse_markers>
+    <source>eJw1zE0KgzAQQOH9nGLWLuoBWihFBAtSBLduohnNoGZCEukfvXtjocsHj+90dsZBnmWAGTbKR5QRoyFsqb9zJGyqBp0aZjVROKRp/2oeyAZCZTUO4p6eJxOR7Sh+VZHFYr9ZvZDGRJjEcfgb6frx9bUob22JIy+UyBwArFoppI2wEE2PrhKZQ3fZojkCDIsKAfcQzy/y8Ab4wBfSND4x</source>
+  </file>
+  <file path="Console/AuthHookTestCommand.php" generated-path="Console.AuthHookTestCommand.html" hash="8c6a9bfb9e5bf4d9b7af0f602b76362c" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
       <tag name="package" line="0" description="Default"/>
     </docblock>
-    <namespace-alias name="Command">\Sebwite\Support\Command</namespace-alias>
+    <namespace-alias name="Command">\Sebwite\Support\Console\Command</namespace-alias>
     <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Console" line="7" package="Default">
-      <extends>\Sebwite\Support\Command</extends>
+      <extends>\Sebwite\Support\Console\Command</extends>
       <name>AuthHookTestCommand</name>
       <full_name>\Codex\Hooks\Auth\Console\AuthHookTestCommand</full_name>
       <docblock line="7">
@@ -719,7 +740,7 @@
       <error line="0" code="PPC:ERR-50000">No summary was found for this file</error>
       <error line="7" code="PPC:ERR-50005">No summary for class \Codex\Hooks\Auth\Console\AuthHookTestCommand</error>
     </parse_markers>
-    <source>eJydkU9vAiEQxe98ijmYrJpY77V/Y5r0rse9IIxCuguEGdpNGr97Ade0Nh6azuUFHo/5wdw9BhOEcLJHClIhrL3GoX31/o3a58SmXXtHvsOVEIkQNrj7sIztJoXgI2e376XT2VWdJIISKeEtEo8e4MDoNMG4Fp8Cci3n86owh61BKARQTpM9OMkpIvg9cHbUCSBrjd+MqXP46V1GAOJo3WHcW1YN0TMqRg2T7zvvoZEZcWEy4y1nyCajX8H51RQ0koo2sPXuPwA/4hcIUBDOTa6gvAyoEuOf/iFifqED6O2A+hIk7TqrYJ+cqgQmxzuczqp5mkapCRtLi4fOOpw2ZYDNbFXNoziKL2VBo4o=</source>
+    <source>eJydkU1vwyAMhu/8Ch8qpY3U9b7uU9Wk3dtjLhTcgpYAwmaLNPW/D9JEW6cepvliwevXfsB3j8EEIZzskIJUCBuvsW9evX+j5jmxaTbekW9xLUQihC3uPyxjs00h+MiTmnPXSadzlWolERRrabJD4lED7BmdJhjP4lNAjlVdDxlq2BmEQgKlmuzRSU4RwR+As6LOo3Ie7DejazI/vcsIQBytO453qyGH6BkVo4bZd897qGRGXJrMeMsZssroV3B+DQWNpKINbL37D8AP+wUCFIRpyBWUlx5VYvzTP0TML3QAne1RX4KkfWsVHJJTA4HJ9hbni0E8b6PEjI2l5UNrHc6rssBqsR7EkziJL0NTprk=</source>
   </file>
   <file path="Hooks/ControllerDocumentHook.php" generated-path="Hooks.ControllerDocumentHook.html" hash="683744c1546e372cd28dcab84719dcdd" package="Default">
     <docblock line="0">
@@ -813,7 +834,7 @@
     </parse_markers>
     <source>eJx9VG1r2zAQ/u5fcYOA7ZK422BfmiVr6QItlBGWfRnLKLIsx1oUyUhyuzH633cnW0lItokQn+7lubvnJL3/0DZtcnlxkcAFLJn1YGrwjYCVKJ+lF7C8W0LL+JZthCvQifweJBfaCWC6Am7aX1ZuGg9S18bumJdGQ9npSokKEKJBOOkiBnoF+If728Wn1QJqqQRCXiaa7YRDJwG3phI/13fGbN36pvNNL06TpHPReGuswD/tLePerYNy+m87AZyZPxre7YT2Z4Y779s+2Cgl7AB/UJwFLK35IfgANPC2XnVta6xHtJ3C2geGvxAV+CMKuGLOwQE3FkTVRqavI23DOuImmBnyY2y0xuTBdBjMEBm3Gc/h7es378bRvYAbpSAYHVjhhH0SVRjK/0oEuWuVoJ0D2ie/E8rTWuORDJz9iPdjCWrsH+6180x7ybw4ZgDzhMCuVJJD3WkejtDjIzcYYDvus9D2AJgH7z4ZrREdr8k82GC2z0qml+SvyA2jw5mdjJUiozyGYaYwanthDLF3GFWDNIaRFTXmTFMUW4ZHneTTAmUN2auIM5k3zC00K/F2EGtZSiNM8/wogJYVvrN6utcNrUQqr5+YhfXZTRmqJhlGBBzJDUQFBa4ZHKrZiOCd5dMjP6XMMw5w1odM5tLd9CpyO+lrcD6tnzI8yQpp3aNgquWgPE4XvJXUW/Sky3J1RZvPpvMiS8Mwi4Y6LAilcIZLpgplNlIj6x2vpXU+26fLx/gi7fDW+CyNuhSV31LPLFaQwmwO6WOpmN6m30/K6EnHTyUtspPlk3mJ94++9JAtrDXWZelX04EWSJA3EAohIYViaKNAmV7GMjx2Rov4pEZeN9Z0rSvS/Hi8/f9L8gf49b6k</source>
   </file>
-  <file path="Hooks/FactoryHook.php" generated-path="Hooks.FactoryHook.html" hash="8a35e831075cdec4d5c8929ddeb35b7e" package="Default">
+  <file path="Hooks/FactoryHook.php" generated-path="Hooks.FactoryHook.html" hash="8681c952c4c9fff2ddb3f86c9fbae6f3" package="Default">
     <docblock line="0">
       <description>Part of the Caffeinated PHP packages.</description>
       <long-description>MIT License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -852,9 +873,9 @@
       <error line="22" code="PPC:ERR-50015">Argument $codex is missing from the Docblock of handle</error>
       <error line="22" code="PPC:ERR-50008">No summary for method handle()</error>
     </parse_markers>
-    <source>eJx1kV1LwzAUhu/zK86FsA9cq4I3Tvxgm2wwZeAuByNLT9u4NAlJqg7ZfzdJW7cbQ2nanOe8Oec994+61CQdDgkMYUWNA5WDKxEmNM+RS+owg9V8BZqyPS3QJh4M7OtiDUvOUFoEKjNgSh8ML0oHXObKVNRxJWFXy0x4hS/uSi/LbafjqXjNcjGZvb3PIOcCvWxKJK3QeshXoDL83syV2tvNc+3K5nNMSG274EQZ9C/pDGXObuLh+P94EPD5bbfrUI5/Qhkh0nX21JXYrpNUjFJfijLwFz3zaYqfsEZaRe5kSKvS/fbZAG6urm8vz3Njimj9bFfpnLZ3aepEZgQWVCRMVWkLpRV3oy7hbBjRRCaotfDim1bmEHoDXmmBFUpnY6/kh4QbdL3zEpDXksVxlTSMqx87hgsWtkEEGzys5nT0UKEpcIo5rYVbGfWBzHmjc170e5FIyjCtJLiVZA221Q23ZRHsDcZR9UiO5BewSNGF</source>
+    <source>eJyNU2Fr2zAQ/e5fcYOA7dDE22BfljVtSTNaaEZg+Rgoiny2tcqSkeR2ZeS/T5LlxG1TqAixrHv37t07+cdFUzVRNh5HMIY1UQZkAaZCWJCiQCaIwRzWN2toCH0gJeqpBTrs6nYDd4yi0AhE5EBl86xYWRlgopCqJoZJAbtW5NwyPDFTWVqmex6L8mXubhfLX7+XUDCOljaLBKlRW5BVIHP8u72R8kFvr1pTddtZFLW6Dy6kQvsnjCLU6K0/nL0fdwQ2P3S7cXLsz8lwkb6zy15iWEcqHyVWilRwiA58usZH2CCpPe5oSGDpXxOawtfPX76dDXN9Cg9+hlUZ0+jvWWZ4rjiWhE+prLMAympmJn3CYBjeRMqJ1vDTNi3Vs+sNWN1wrFEY7XuN/kWuQtPuLAUUraB+XBVx40p8xzCi7pF6YAd3qzudzGtUJV5jQVpu1kr+QWqs0QUrk9gjppWb1tS5Nc072H3T4e6pB8apnUVPq9C0SswO7/YKIaEVJH29Es0KRauT1O+TOJDp2B4QzpMUiIaRsOh0INctVlgaF5jMK6JXaMghO05fg92yFwQuH4mC7eAahSZhFFKdz68TD7FzCAXrl9Vmb1K8uBD3+paC7Own46aUxM6+j2kcfCdBqdvDyDGckurl+uA5HOtbZ11ackJoL/aTz5rMmb7iXD5hnpzUd6jR+aDd+JwVFctzFPEZGNXiO2X2b05fnhzfut0+2kf/AcTgYj4=</source>
   </file>
-  <file path="HookServiceProvider.php" generated-path="HookServiceProvider.html" hash="f4a552c7bdf5bc47d7f6e699e21a3144" package="Default">
+  <file path="HookServiceProvider.php" generated-path="HookServiceProvider.html" hash="5bc648ebff96f224aebd4fee2266a859" package="Default">
     <docblock line="0">
       <description></description>
       <long-description></long-description>
@@ -970,7 +991,7 @@
       <error line="40" code="PPC:ERR-50007">No summary for property $aliases</error>
       <error line="44" code="PPC:ERR-50007">No summary for property $bindings</error>
     </parse_markers>
-    <source>eJyNVd9v2jAQfs9f4YdJCRU/tkl7SVfWClat0jpNpXsqFTLOQbwa27Id2qrq/76zk0CAdDRPwffd5+++uxxfv+lcR5GkK7CaMiAjlcHT9IdSD3Z6Ubj8NIoKWx+PlIHpb6P+AnOn++e3hnJnfXjNM7Ah0gRtOavXkZLOKCHAjBUrViCdP/9vyiVlTpnnLe5KiGLFJXVQ0mEcUaqQGXVcyemF1oKz8F4mTGD+yBE9KbRWxk0nYNacQaXaYLmDk5OInJDbHMiKcklsiSC6gmDQx88pylKGVE/FGyJM6WfDl7kLkdHmV8I65PPHT1+6O2jUBxKVlU/unLbpYOBEZgQsqegztRpUmMGKu16Nv766DfnYtge6rPNL47xl3iQEDCImqLXE/9wrlsCTA5lZsncevUSeytu1181wjkY4HADIyIeMG3JGZrPx1c1sdhhmSi748pILsAi7IzHzNP3c97Lv/YvJ/WHWmsPjmJsqxf+yMTkbVtmDN/PqBoXEqG5MXVSYN6sE7BWbpsGfbkvCjSrcUfj0JzV0DWI6UYxTEWarfmvPDakt+i2XSwEOVe4U0GIamnFNJTb9GCWqoBbew7f9et7HPOcyQ71HqPu6XBbhimpx+NlsJS/mONpkUUjmP1diYMmtA5N0Qvhlc8sHqjVeq6nBlZGmW1xFFDAu57Y3pFkWmlhd/QvX3PcnJgqLF9gkDtVj2mFWmHf/ySTxotw5eA/NnuMuaeygqoxjDGyz6NKs2nTI077+tpTNgfTi03RFmVFJvITgIVJsvEo66M8mwT+4xcj5mpo6u1Tm10ETZcAVRtaqvU7ceGB6wxV9gOTtdnYbTd80v9nrwLgDuW+49NrimNZ3MazRBRvf94bCt1QmsfHdM/05LPAv5qDiJj8SHAqOO72hzXFQ/uAWH1NHkxYVr+3zN1fKHZu9EnO6E94xLwhwuKGTxvZKUwvhDtvPcajQb6d0Dyeg8MMYVaJeo39wumSi</source>
+    <source>eJyNVd9v2jAQfs9f4YdJCRU/tkl7SVfWClat0jpNpXsqFTLOQbwa27Id2qrq/76zk0CAdDRPwffd57vvLh9fv+lcR5GkK7CaMiAjlcHT9IdSD3Z6Ubj8NIoKWx+PlIHpb6P+AnOn++e3hnJnfXjNM7Ah0gRtOavXkZLOKCHAjBUrViCdP/9vyiVlTpnnLe5KiGLFJXVQ0mEcUaqQGXVcyemF1oKz8F4mTGD+yBE9KbRWxk0nYNacQVW1wXYHJycROSG3OZAV5ZLYEkF0BcGgj59TLEsZUj0Vb4gwpZ8NX+YuREabXwnrkM8fP33p7qCxPpBYWfnkzmmbDgZOZEbAkoo+U6tBhRmsuOvV+Our25CPY3ugyzq/FM5L5kVCwCBiglpL/M+9Zgk8OZCZJXvn0Uvkqbxce9MM5yiEwwWAjHzIuCFnZDYbX93MZodhpuSCLy+5AIuwOxIzT9PP/Sz7Xr+Y3B9mrTk8jrmpUvwvG5OzYZU9eDOvHlBIjOrB1E2FfbNKwF6zaRr06bYk3KjCHYVPf1JD1yCmE8U4FWG36rf23JDaUr/lcinAYZU7DbSIhmJcU4lDP0aJVVAL7+Hbfj3vY55zmWG9R6j7ujSLcEVlHH43W8mLOa42WRSS+c+VGFhy68AknRB+2dzygWqN12pq0DLSdIuriALG5dz2hjTLwhCrq3+hzX1/YqKweIFN4tA9ph1mhX33n0wSL0rPSTMlIe6ShgVVXRwjYBufQ47S6JCn3f22lM199LWn6Yoyo5J4CUFCpNhIlXRQnk2Cf9DEyPmamjq7rMy7QRNlwBVG1lX7OtHwwPSGK/oAydvT7DZmvpl9c9SBcQdy31DptUUxre9iWKMKNr7vDYWfqExi44dn+nNY4D/MQcdNfiQ4LDju9IY2xz35gyY+po4mLVW8tq/fXCl3bPVKzOlOeEe8UIBDg04a5pWmFsIdtp8DRV/oOaV7uAGF38WoKuo1+gex+2Qz</source>
   </file>
   <package name="Codex" full_name="Codex">
     <package name="AuthHook" full_name="Codex\AuthHook"/>

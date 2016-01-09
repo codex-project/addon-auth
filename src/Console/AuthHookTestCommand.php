@@ -2,7 +2,7 @@
 
 namespace Codex\Hooks\Auth\Console;
 
-use Sebwite\Support\Command;
+use Sebwite\Support\Console\Command;
 
 class AuthHookTestCommand extends Command
 {

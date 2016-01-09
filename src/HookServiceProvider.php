@@ -50,7 +50,7 @@ class HookServiceProvider extends ServiceProvider
         $app = parent::register();
 
         $this->addRouteProjectNameExclusions('auth');
-        $this->addCodexHook('factory:ready', FactoryHook::class);
+        $this->addCodexHook('factory:done', FactoryHook::class);
         $this->addCodexHook('controller:document', ControllerDocumentHook::class);
 
         Project::macro('getAuth', function () {
