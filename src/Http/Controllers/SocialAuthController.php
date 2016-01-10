@@ -11,6 +11,7 @@ use Codex\Core\Contracts\Codex;
 use Codex\Core\Http\Controllers\Controller;
 use Codex\Hooks\Auth\Contracts\Manager;
 use Illuminate\Contracts\View\Factory as ViewFactory;
+use Session;
 
 /**
  * This is the class AuthController.
@@ -56,6 +57,7 @@ class SocialAuthController extends Controller
      */
     public function redirectToProvider($provider)
     {
+        Session::put('_beforeSocialAuthRedirect', Session::previousUrl());
         $this->validateProviderName($provider);
 
         return $this->manager->redirect($provider);
@@ -71,7 +73,13 @@ class SocialAuthController extends Controller
         $this->validateProviderName($provider);
         $this->manager->callback($provider);
 
-        return redirect()->route('codex.hooks.auth.login');
+        $redirect = redirect()->route('codex.hooks.auth.login');
+        if (Session::has('_beforeSocialAuthRedirect')) {
+            $redirect = redirect()->to(Session::get('_beforeSocialAuthRedirect'));
+            Session::forget('_beforeSocialAuthRedirect');
+        }
+
+        return $redirect;
         // $user->token;
     }
 
@@ -81,6 +89,6 @@ class SocialAuthController extends Controller
         $this->validateProviderName($provider);
         $this->manager->logout($provider);
 
-        return redirect()->route('codex.hooks.auth.login');
+        return redirect()->to(Session::previousUrl()); //route('codex.hooks.auth.login');
     }
 }

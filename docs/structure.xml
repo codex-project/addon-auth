@@ -301,7 +301,7 @@
     </parse_markers>
     <source>eJx9VdFq2zAUffdX3EFo7JK022BP2bKVUmihG4F2T8soinxta3UkI8ntysi/T5Ilx7GdhJDaukfnnnOu7H7+WhVVdHl+HsE5rIjUIDLQBcIDbl6ZRljdrqAi9JnkqC4MyOLuGUWuEAhPgYrqTbK80MB4JuSWaCY4bGqelpiCoSgMHVOBw6Ac/f3d9c2PhxvIWImG8jLiZIvKgBCuRYp/17dCPKv1Va2LRRTVKixfC4nmh2tJqFZrt7jo11dS/EGqB+uPkrCwyV0fR/CM5QPIXlNHwnfCjS8JRIG/DDUj3Af7aBMwX+uclkQp8BItV0j1W4jIfzo9XZkYrJChGgbkSvsh+J3hNqYJfHz/4dMswC/gqizBFRVIVChfMHUDGOiK/kWWrLXv4pjBQTYOUUmhzR4z7kkVku8Xtk00vmBigTuuNOGaEY2dYFzZ5uH+2Ewk2cL6+PDbPCbU3o5vPDm4oO1ET58K9D/Br9962biuNyWjkNWcumfh6YkK41XWVMeN5EbqrH9eWiWzMIa2QeKYm4G4xvaZmi8VascYN4zJYhRg5xUHpvmSNgvTwoZyYU/VNBnu9FLgS2d2PYhntJB27ra8i0ZzyFEbWy8sRRn3/UjUteSBOCisPHyanCRmypxp8YrpgJZlEL87NDRfMnUv8hzTOx770oGyJOkQdLRlpFS4z8BrcXGYR8QF1WtkaH+ayniXRWc/sfL3BMG+W552kc4Pbiv9FjebfsHUNldT+J3A2Zl5uz4RKYkp2+X5kjP6bN+sMxjgZ2COJB5za2ujZsck5FLUVashVBsFTW3QxvyrQEILOITZl+jEXfbxofXeoIN1fLUijhg7aXBvdPyuE8DwOOyiXfQf0e0wkw==</source>
   </file>
-  <file path="Http/Controllers/SocialAuthController.php" generated-path="Http.Controllers.SocialAuthController.html" hash="91fb186f9069910fb2f15a67f5f4778b" package="Default">
+  <file path="Http/Controllers/SocialAuthController.php" generated-path="Http.Controllers.SocialAuthController.html" hash="aa69ea8b2b6a97f1d80b7ffe58478f66" package="Default">
     <docblock line="0">
       <description>Part of the Sebwite PHP packages.</description>
       <long-description>License and copyright information bundled with this package in the LICENSE file</long-description>
@@ -312,30 +312,31 @@
     <namespace-alias name="Controller">\Codex\Core\Http\Controllers\Controller</namespace-alias>
     <namespace-alias name="Manager">\Codex\Hooks\Auth\Contracts\Manager</namespace-alias>
     <namespace-alias name="ViewFactory">\Illuminate\Contracts\View\Factory</namespace-alias>
-    <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Http\Controllers" line="22" package="Codex\Hooks">
+    <namespace-alias name="Session">\Session</namespace-alias>
+    <class final="false" abstract="false" namespace="Codex\Hooks\Auth\Http\Controllers" line="23" package="Codex\Hooks">
       <extends>\Codex\Core\Http\Controllers\Controller</extends>
       <name>SocialAuthController</name>
       <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController</full_name>
-      <docblock line="22">
+      <docblock line="23">
         <description>This is the class AuthController.</description>
         <long-description></long-description>
-        <tag name="package" line="22" description="Codex\Hooks"/>
-        <tag name="author" line="22" description="Sebwite"/>
-        <tag name="copyright" line="22" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
+        <tag name="package" line="23" description="Codex\Hooks"/>
+        <tag name="author" line="23" description="Sebwite"/>
+        <tag name="copyright" line="23" description="Copyright (c) 2015, Sebwite. All rights reserved"/>
       </docblock>
-      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="24" package="Codex\Hooks">
+      <property static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="25" package="Codex\Hooks">
         <name>$manager</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::manager</full_name>
         <default></default>
-        <docblock line="24">
+        <docblock line="25">
           <description></description>
           <long-description></long-description>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="44" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="Codex\Hooks\Auth\Http\Controllers" line="45" package="Codex\Hooks">
         <name>validateProviderName</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::validateProviderName()</full_name>
-        <docblock line="44">
+        <docblock line="45">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -350,13 +351,13 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="57" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="58" package="Codex\Hooks">
         <name>redirectToProvider</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::redirectToProvider()</full_name>
-        <docblock line="57">
+        <docblock line="58">
           <description>Redirect the user to the GitHub authentication page.</description>
           <long-description></long-description>
-          <tag name="return" line="57" description="" type="\Response">
+          <tag name="return" line="58" description="" type="\Response">
             <type>\Response</type>
           </tag>
         </docblock>
@@ -366,13 +367,13 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="69" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="71" package="Codex\Hooks">
         <name>handleProviderCallback</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::handleProviderCallback()</full_name>
-        <docblock line="69">
+        <docblock line="71">
           <description>Obtain the user information from GitHub.</description>
           <long-description></long-description>
-          <tag name="return" line="69" description="" type="\Response">
+          <tag name="return" line="71" description="" type="\Response">
             <type>\Response</type>
           </tag>
         </docblock>
@@ -382,10 +383,10 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="79" package="Codex\Hooks">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Codex\Hooks\Auth\Http\Controllers" line="87" package="Codex\Hooks">
         <name>getLogout</name>
         <full_name>\Codex\Hooks\Auth\Http\Controllers\SocialAuthController::getLogout()</full_name>
-        <docblock line="79">
+        <docblock line="87">
           <description></description>
           <long-description></long-description>
         </docblock>
@@ -397,16 +398,16 @@
       </method>
     </class>
     <parse_markers>
-      <error line="44" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of validateProviderName</error>
-      <error line="44" code="PPC:ERR-50015">Argument $abort is missing from the Docblock of validateProviderName</error>
-      <error line="44" code="PPC:ERR-50008">No summary for method validateProviderName()</error>
-      <error line="57" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirectToProvider</error>
-      <error line="69" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of handleProviderCallback</error>
-      <error line="79" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of getLogout</error>
-      <error line="79" code="PPC:ERR-50008">No summary for method getLogout()</error>
-      <error line="24" code="PPC:ERR-50007">No summary for property $manager</error>
+      <error line="45" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of validateProviderName</error>
+      <error line="45" code="PPC:ERR-50015">Argument $abort is missing from the Docblock of validateProviderName</error>
+      <error line="45" code="PPC:ERR-50008">No summary for method validateProviderName()</error>
+      <error line="58" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of redirectToProvider</error>
+      <error line="71" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of handleProviderCallback</error>
+      <error line="87" code="PPC:ERR-50015">Argument $provider is missing from the Docblock of getLogout</error>
+      <error line="87" code="PPC:ERR-50008">No summary for method getLogout()</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $manager</error>
     </parse_markers>
-    <source>eJy1VW1v2zYQ/q5fcQOM2g4cu+vLl6bxFhhtEyDNgqbrl2ooaOpsE6FJgaScFEX++44UaTNymhVoRxiWSN49d89zPOr1H/WqLiYHBwUcwCUzDvQC3ArhCuc3wiFcnl5Czfg1W6Idk5G3OxcclUVgqgKu669GLFcOhFpos2ZOaAXzRlUSKyCIFcEJmzDIKsCfn83eXFy9gYWQSJCTQrE1WjJCmOkKb8tTra9tedK4VXnqXF3OtHJGS4nGHhVFQ9FP6rr826I5CrPWa6YNtqaMO1uGxb39Ll72nttmGewQ3zNFLKLdmZTNWijm8pifBN6Ub+lVm6/ALPh5nFLiUemPXhL6eSm4ZNaCj7PLIyn9Z5ItjiyzsM3IS5u0m4oWtnaFiZ5pOuBDePb095ejZD6GEykhbFowSJJusApFaVO70lwweT9BwFuHqrKwWyq+FT5QbbRD7qj4vXUSK2wE6n4cwMwgiQYMFN6A54DKCd4eHb6LIZR1THEcR7/kTqoYtoby+zWHfPS4X/oh5/eomvY/VbC3pknX978L3wbe0NLDcR87XK1vFK9LXSiHRjEJEe6cHhuUZVskcS+jLQcbNr+LkdG5QmupCul55i0Xvit7tl2JIJO21s1cCg6LRvFQuy9fqHrWmYa7QVuHVvtR3gWtLCNIbBPTYYBsD1EAZ4aOxatXOWiCCxDDo61tz98xh9OIBMfZ2euaiIpuphvCHvSXDVrXH8Fn6OMtx9r14XgK/SW6c73UDU3/iTHuis7Z3lLekOgVKXdp9EZUaC7oHhv06jijTNlc0616DEQAuxR7wduney//w6mwn/xOAt0BZpzFAga/RYQnT2KgYYbuR1gcvHj6fAT9C+2o5VqHhNfPAO9yqlm3fsBKGKIdbiu69ww4Hd7fCXfazLsNXBOFvY416BqjoPxAlzxVEx89RiYG/KgfEKArYavc42UYxivIj5hJV/EUc0/qfT3+mjsWP2NBjfzDtzB6HXX5OQ1WzH9BE50Zk3JOn4Kf1+Hhjjmc8v0I+6JtRRqSYNQg1EOhIccrf52N/UEYS70UKj9Wkwn0vE6HU6evUW1VfZD2tvf+P6ayi/8LeN4Vd8W/KB/wMQ==</source>
+    <source>eJy1VW1v2zYQ/q5fcQOEyg4cu1u7L8mSNjC6JUCaBk3bL9MQ0NLZJiKTAkk5KYb89x4p0mLk2A0wjAhikbx77u65F/7xrl7WyeTgIIEDuGbKgJyDWSLc4OyeG4Tr82uoWXHHFqjHJGTlLnmBQiMwUUIh6++KL5YGuJhLtWKGSwGzRpQVlkAQS4LjOmCQlIO/vJh+uLr5AHNeIUFOEsFWqEkIYSpLfMjPpbzT+Vljlvm5MXU+lcIoWVWo9HGSNGT9rK7zrxrVsdu1WlOpsBVlhdG5O9y67+NF37Fs5EGH+JEJisLLXVRVs+KCmdjmN473+Z/0KdV3YBrs3m9brRvUmjiiKDztXyw/9Gd5KSqmNVijnVOB9veBQ78iN901Iy2pwm3IoLvqsuQ1w3ZQDOG317/+PgriYzirKnCXGhQSv2ssXYZa125kwVn11EHAB4Oi1NAdJf8m1lCtpMHCUCWkq8Ccu3Ch23UAU4XEIDAQeA82BhSGF20dFZ0NLrRhosCx1wvqxIpiK8h3FwDEKy3s0YuUP6Jo2v8hnemKNn3dn1dBa3hNR8/b3Vdpra4nrx86FwaVYBV4uEv6WWOVt0niTzzaxKDd5U6MKBxfqeH3wkrObYumuj3xIJM2182s4gXMG1G43N3eUva0UU1hBm0eWu5HcUu0tIwgRBsiHTrItogcOFNUFkdHMWiAcxDD441sagfO4alHgpOo9voivKQxdU/Yg2zRoDbZCP6GDB8KrE0GJ6eQLdBcyoVsaPuPt/GY9Gp7E/KaSC+JuWsl17xEdUVDbZDWfkeespmkEXsCFAD2Q0ydtnX3if+Hp1x/szcBtAOMYuZzGPziEV698oaGEbpd7nDw9vWbEWRX0lDLtQoBL4sAH+NQo279jCVXFLabVjTOFBjpvv/i5ryZ9Ru4phC2OlahaZSA/DNNfMom7i0j5Q1+kc8Q0KPQF+rRUd2YQXY7Q3qRsJtYwfdsFEkqXHPZ6K+qGgy3i2h/Rod+mtnlg+onL7i/lbVtaj/NDPPPoyM2flDnSq48xf+NziWzL3MIZ8qqakavym5KX8rD8813eFpsW4hISwM9VPYbpobEGjUc9aRr8PHSjsexLaxxJRdcZL263+RyyfS+rA/7/bDLupEdJvX/fszjJ5AbPZL/mWrcbFtlFPzphCYTSG1dWP/uUGyq6Nk0b8bW/5fZqo+/3Qy7SO01HYX2ooQ/Jo/JD3vGYOU=</source>
   </file>
   <file path="Http/Controllers/AuthController.php" generated-path="Http.Controllers.AuthController.html" hash="cd58a0e24971bb27e39715f30c5a20eb" package="Default">
     <docblock line="0">
