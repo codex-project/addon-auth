@@ -3,9 +3,10 @@
 namespace Codex\Hooks\Auth;
 
 use Codex\Core\Project;
-use Codex\Core\Traits\ProvidesCodex;
+use Codex\Core\Traits\CodexProviderTrait;
 use Codex\Hooks\Auth\Hooks\ControllerDocumentHook;
 use Codex\Hooks\Auth\Hooks\FactoryHook;
+use Codex\Hooks\Auth\Hooks\ProjectsResolvedHook;
 use Illuminate\Contracts\Foundation\Application;
 use Sebwite\Support\ServiceProvider;
 
@@ -19,7 +20,7 @@ use Sebwite\Support\ServiceProvider;
  */
 class HookServiceProvider extends ServiceProvider
 {
-    use ProvidesCodex;
+    use CodexProviderTrait;
 
     protected $dir = __DIR__;
 
@@ -49,17 +50,18 @@ class HookServiceProvider extends ServiceProvider
     {
         $app = parent::register();
 
-        $this->addRouteProjectNameExclusions('auth');
-        $this->addCodexHook('factory:done', FactoryHook::class);
-        $this->addCodexHook('controller:document', ControllerDocumentHook::class);
+        $this->codexRouteExclusion('auth');
+        $this->codexHook('factory:done', FactoryHook::class);
+        $this->codexHook('controller:document', ControllerDocumentHook::class);
+        $this->codexHook('projects:resolved', ProjectsResolvedHook::class);
 
-        Project::macro('getAuth', function () {
-
+        Project::extend('getAuth', function () {
             /** @var Project $this */
-            return $this->container->make('codex.hooks.auth.project', [
+            return $this->getContainer()->make('codex.hooks.auth.project', [
                 'project' => $this
             ]);
         });
+
         $this->app['events']->listen('router.before', function () {
             app('codex.hooks.auth')->shareUserData();
         });

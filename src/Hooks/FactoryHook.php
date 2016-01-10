@@ -22,20 +22,5 @@ class FactoryHook implements Hook
     public function handle(Codex $codex)
     {
         $codex->mergeDefaultProjectConfig('codex.hooks.auth.default_project_config');
-
-        return;
-        foreach ($codex->getMenus()->get('projects')->all() as $node) {
-            if ($node->hasMeta('project')) {
-                /** @var \Codex\Core\Project $project */
-                $project = $node->meta('project');
-                if ($project->hasEnabledHook('auth')) {
-                /** @var \Codex\Hooks\Auth\ProjectAuth $auth */
-                    $auth = $project->getAuth();
-                    if (!$auth->isAllowed()) {
-                        $node->setMeta('hidden', true);
-                    }
-                }
-            }
-        }
     }
 }
