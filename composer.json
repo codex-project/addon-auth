@@ -1,6 +1,10 @@
 {
     "name": "codex/auth-hook",
-    "description": "codex/auth-hook is a laravel package",
+    "description": "Authentication / Access control Hook for Codex. Works with github/bitbucket login. Define groups that can access the docs.",
+    "keywords": ["framework", "laravel", "documentation", "docs", "markdown", "codex"],
+    "homepage": "http://codex-project.ninja",
+    "authors": [{"name": "Robin Radic", "email": "robin@radic.nl"}],
+    "license": "MIT",
     "require": {
         "php": ">=5.5.9",
         "codex/core": "1.0.*",

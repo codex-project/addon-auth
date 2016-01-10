@@ -1,25 +1,37 @@
-Codex Auth-hook
+Codex Auth Hook
 ====================
 
-[![Build Status](https://img.shields.io/travis/codex/auth-hook.svg?&style=flat-square)](https://travis-ci.org/codex/auth-hook)
-[![Scrutinizer coverage](https://img.shields.io/scrutinizer/coverage/g/codex/auth-hook.svg?&style=flat-square)](https://scrutinizer-ci.com/g/codex/auth-hook)
-[![Scrutinizer quality](https://img.shields.io/scrutinizer/g/codex/auth-hook.svg?&style=flat-square)](https://scrutinizer-ci.com/g/codex/auth-hook)
-[![Source](http://img.shields.io/badge/source-codex/auth-hook-blue.svg?style=flat-square)](https://github.com/codex/auth-hook)
+[![Documentation](https://img.shields.io/badge/documentation-codex--project.ninja%2Fauth--hook-orange.svg?style=flat-square)](https://codex-project.ninja/auth-hook)
+[![Source](http://img.shields.io/badge/source-auth--hook-blue.svg?style=flat-square)](https://github.com/codex-project/auth-hook)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
-Codex Auth-hook is a package for the Laravel 5 framework.
+The Auth Hook provides Codex the means to leverage access control to the projects you define. Currently it works only with Bitbucket/Github login.
 
-The package follows the FIG standards PSR-1, PSR-2, and PSR-4 to ensure a high level of interoperability between shared PHP code.
+Define Github\Bitbucket groups that are allowed to view the documentation.
+ 
+There will be support for more providers in the future. Including local/database.
 
-Documentation
--------------
-Tbd
+Installation
+------------
+1. Add to composer
 
-Quick Installation
-------------------
-Begin by installing the package through Composer.
+		composer require codex/phpdoc-hook
 
-```bash
-composer require codex/auth-hook
-```
+2. Add service provider
+
+		Codex\Hooks\Phpdoc\HookServiceProvider::class
+
+3. Publish and configure the configuration file
+
+		php artisan vendor:publish --provider=Codex\Hooks\Phpdoc\HookServiceProvider --tag=config
+
+4. Publish the asset files
+
+        php artisan vendor:publish --provider=Codex\Hooks\Phpdoc\HookServiceProvider --tag=public
+        
+5. Publish the view files (optional)        
+
+        php artisan vendor:publish --provider=Codex\Hooks\Phpdoc\HookServiceProvider --tag=views
+
+6. Check the [documentation](http://codex-project.ninja/auth-hook) for more!
 
