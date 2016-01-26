@@ -40,11 +40,13 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group([
-            'as'        => 'codex.hooks.auth.',
-            'prefix'    => config('codex.base_route') . '/auth',
-            'namespace' => $this->namespace
-        ], function ($router) {
-        
+            'as'         => 'codex.hooks.auth.',
+            'prefix'     => config('codex.base_route') . '/auth',
+            'namespace'  => $this->namespace,
+            'middleware' => app('codex')->getLaravelVersion()->getMinor() >= 2 ? [ 'web' ] : [ ]
+        ], function ($router)
+        {
+
             require __DIR__ . '/../Http/routes.php';
         });
     }

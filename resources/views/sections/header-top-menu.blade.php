@@ -4,6 +4,7 @@
         <i class="fa fa-key"></i>
     </a>
     <ul class="dropdown-menu dropdown-menu-packadic dropdown-menu-inverse dropdown-menu-right">
+
         @foreach($auths as $provider => $data)
             @if($data === false)
                 <a href="{{ route('codex.hooks.auth.social.login', compact('provider')) }}" class="dropdown-item"><i class="fa fa-{{ $provider }}"></i> {{ ucfirst($provider) }} login </a>
