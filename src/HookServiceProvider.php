@@ -62,15 +62,13 @@ class HookServiceProvider extends ServiceProvider
             ]);
         });
 
-        $this->app['events']->listen('router.before', function () {
-            app('codex.hooks.auth')->shareUserData();
-        });
     }
 
     public function boot()
     {
         $app = parent::boot();
         $app->make('codex')->stack('codex/auth::sections.header-top-menu');
+        app('codex.hooks.auth')->shareUserData();
 
 
     }
