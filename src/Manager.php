@@ -10,6 +10,7 @@ use Codex\Core\Contracts\Codex;
 use Codex\Core\Traits\CodexTrait;
 use Codex\Core\Traits\ContainerTrait;
 use Codex\Hooks\Auth\Contracts\Manager as ManagerContract;
+use Codex\Hooks\Auth\Exceptions\InvalidProviderException;
 use Illuminate\Contracts\Container\Container;
 use Laravel\Socialite\Contracts\Factory as SocialAuthFactory;
 
@@ -59,16 +60,20 @@ class Manager implements ManagerContract
         return config('codex.hooks.auth.providers', [ ]);
     }
 
-    public function isValidProvider($provider)
+    public function isValidProvider($provider, $throw = false)
     {
-        return in_array($provider, $this->getProviders(), true);
+        $valid = in_array($provider, $this->getProviders(), true);
+        if($valid === false && $throw === true){
+            throw InvalidProviderException::forProvider($provider);
+        }
+        return $valid;
     }
 
     public function redirect($provider)
     {
-        if (!$this->isValidProvider($provider)) {
-            throw new \InvalidArgumentException("Not a valid provider [{$provider}]");
-        }
+        $s = request()->session();
+        $this->isValidProvider($provider, true);
+
         $driver = $this->social->driver($provider);
         if ($provider === 'github') {
             $driver->scopes([ 'user', 'user:email', 'read:org' ]);
