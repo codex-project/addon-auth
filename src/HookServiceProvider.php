@@ -7,7 +7,6 @@ use Codex\Core\Traits\CodexProviderTrait;
 use Codex\Hooks\Auth\Hooks\ControllerDocumentHook;
 use Codex\Hooks\Auth\Hooks\FactoryHook;
 use Codex\Hooks\Auth\Hooks\ProjectsResolvedHook;
-use Illuminate\Contracts\Foundation\Application;
 use Sebwite\Support\ServiceProvider;
 
 /**
@@ -28,10 +27,13 @@ class HookServiceProvider extends ServiceProvider
 
     protected $viewDirs = [ 'views' => 'codex/auth' ];
 
+    protected $deferredProviders = [
+        \Laravel\Socialite\SocialiteServiceProvider::class
+    ];
+
     protected $providers = [
         Providers\ConsoleServiceProvider::class,
         Providers\RouteServiceProvider::class,
-        \Laravel\Socialite\SocialiteServiceProvider::class
     ];
 
     protected $singletons = [
@@ -46,6 +48,22 @@ class HookServiceProvider extends ServiceProvider
         'codex.hooks.auth.project' => ProjectAuth::class
     ];
 
+
+    public function boot()
+    {
+        $app = parent::boot();
+
+        $app->make('codex')->stack('codex/auth::sections.header-top-menu', function ()
+        {
+            app('codex.hooks.auth')->shareUserData();
+        });
+
+        if ( $this->config('codex.hooks.auth.merge_providers', false) )
+        {
+            $this->mergeServicesConfig();
+        }
+    }
+
     public function register()
     {
         $app = parent::register();
@@ -55,20 +73,31 @@ class HookServiceProvider extends ServiceProvider
         $this->codexHook('controller:document', ControllerDocumentHook::class);
         $this->codexHook('projects:resolved', ProjectsResolvedHook::class);
 
-        Project::extend('getAuth', function () {
+        Project::extend('getAuth', function ()
+        {
             /** @var Project $this */
             return $this->getContainer()->make('codex.hooks.auth.project', [
                 'project' => $this
             ]);
         });
-
     }
 
-    public function boot()
+    protected function mergeServicesConfig()
     {
-        $app = parent::boot();
-        $app->make('codex')->stack('codex/auth::sections.header-top-menu');
-        app('codex.hooks.auth')->shareUserData();
-
+        $providers = $this->config('codex.hooks.auth.providers');
+        foreach ( $providers as $provider => $data )
+        {
+            if ( !$this->config()->has('services.' . $provider) )
+            {
+                $data[ 'redirect' ] = $this->getRedirectUrl($provider);
+                $this->config()->set('services.' . $provider, $data);
+            }
+        }
     }
+
+    protected function getRedirectUrl($provider)
+    {
+        return route('codex.hooks.auth.social.login.callback', compact('provider'));
+    }
+
 }

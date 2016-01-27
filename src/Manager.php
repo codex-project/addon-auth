@@ -57,7 +57,7 @@ class Manager implements ManagerContract
 
     public function getProviders()
     {
-        return config('codex.hooks.auth.providers', [ ]);
+        return array_keys(config('codex.hooks.auth.providers', [ ]));
     }
 
     public function isValidProvider($provider, $throw = false)
