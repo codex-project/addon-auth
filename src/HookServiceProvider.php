@@ -58,10 +58,7 @@ class HookServiceProvider extends ServiceProvider
             app('codex.hooks.auth')->shareUserData();
         });
 
-        if ( $this->config('codex.hooks.auth.merge_providers', false) )
-        {
-            $this->mergeServicesConfig();
-        }
+        $this->mergeServicesConfig();
     }
 
     public function register()
@@ -84,13 +81,20 @@ class HookServiceProvider extends ServiceProvider
 
     protected function mergeServicesConfig()
     {
-        $providers = $this->config('codex.hooks.auth.providers');
+        $config = $this->app->make('config');
+
+        if ( ! $config->get('codex.hooks.auth.merge_providers', false) )
+        {
+            return;
+        }
+
+        $providers = $config->get('codex.hooks.auth.providers');
         foreach ( $providers as $provider => $data )
         {
-            if ( !$this->config()->has('services.' . $provider) )
+            if ( !$config->has('services.' . $provider) )
             {
                 $data[ 'redirect' ] = $this->getRedirectUrl($provider);
-                $this->config()->set('services.' . $provider, $data);
+                $config->set('services.' . $provider, $data);
             }
         }
     }
