@@ -1,22 +1,24 @@
 {
-    "name": "codex/auth-hook",
+    "name": "codex/addon-auth",
+    "type": "codex-addon",
     "description": "Authentication / Access control Hook for Codex. Works with github/bitbucket login. Define groups that can access the docs.",
-    "keywords": ["framework", "laravel", "documentation", "docs", "markdown", "codex"],
+    "keywords": ["framework", "laravel", "documentation", "docs", "markdown", "codex", "authentication", "security", "access"],
     "homepage": "http://codex-project.ninja",
     "authors": [{"name": "Robin Radic", "email": "robin@radic.nl"}],
     "license": "MIT",
     "require": {
         "php": ">=5.5.9",
         "codex/core": "1.0.*",
-        "sebwite/support": "1.0.*",
+        "codex/composer-plugin": "1.0.*",
+        "sebwite/support": "2.0.*",
         "laravel/socialite": "~2.0"
     },
     "require-dev": {
-        "sebwite/testbench": "1.0.*"
+        "sebwite/testing": "1.0.*"
     },
     "autoload": {
         "psr-4": {
-            "Codex\\Hooks\\Auth\\": "src/"
+            "Codex\\Addon\\Auth\\": "src/"
         }
     },
     "extra": {
