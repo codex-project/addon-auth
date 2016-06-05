@@ -23,7 +23,7 @@ class AuthHooks
         if($project->config('auth.enabled', false) !== true){
             return;
         }
-        $pro
+
     }
 
     protected function hasEnabledAuth(Project $project)
