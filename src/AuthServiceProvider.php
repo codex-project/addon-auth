@@ -15,11 +15,12 @@ class AuthServiceProvider extends ServiceProvider
 
     protected $viewDirs = [ 'views' => 'codex-auth' ];
 
+    protected $assetDirs = [ 'assets' => 'codex-auth' ];
 
     protected $providers = [
         \Laravel\Socialite\SocialiteServiceProvider::class,
         Http\HttpServiceProvider::class,
-        Socialite\SocialiteServiceProvider::class
+        Socialite\SocialiteServiceProvider::class,
     ];
 
     public function boot()
@@ -27,7 +28,10 @@ class AuthServiceProvider extends ServiceProvider
         $app = parent::boot();
 
         $this->codex()->pushToStack('header', $this->codexView('auth.stacks.header.auth-menu'));
-        $this->codex()->theme->addStylesheet('auth', 'vendor/codex-auth/styles/auth');
+        $this->codex()
+            ->theme
+            ->addStylesheet('auth', 'vendor/codex-auth/styles/auth')
+            ->addBodyClass('codex-auth');
 
         return $app;
     }
