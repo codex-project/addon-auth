@@ -1,11 +1,16 @@
-@extends('auth.layouts.default')
+@extends('codex::layouts.codex-base')
 
-@section('content')
-    @if(isset($errors))
-        @include('auth.partials.errors', ['errors' => $errors])
-    @endif
+@push('header')
+    @section('menu-projects')
+        {!! $codex->menus->get('projects')->render() !!}
+    @show
+@endpush
 
-    <h1>Protected</h1>
 
-    <p>Route name: <strong>{{ Route::current()->getName() }}</strong></p>
-@stop
+@push('content')
+<div class="text-center">
+    <h1>{{ config('codex-auth.error-page.title') }}</h1>
+    <p>{{ config('codex-auth.error-page.text') }}</p>
+    <a href="javascript:history.back(2);">Go back</a>
+</div>
+@endpush

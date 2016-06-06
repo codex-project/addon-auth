@@ -8,8 +8,12 @@ return [
 
     'drivers' => [ 'github', 'bitbucket' ],
 
-    // If true, the providers data will be set as services.{provider} and the redirect url will be configured automaticly
-//    'merge_providers' => true,
+    'error-page' => [
+        'view'  => 'codex-auth::protected',
+        'title' => 'Access denied',
+        'text'  => 'This project is not public and requires authorization',
+    ],
+
 
     'providers' => [
         'github'    => [

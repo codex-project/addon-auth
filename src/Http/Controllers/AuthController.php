@@ -2,7 +2,6 @@
 namespace Codex\Addon\Auth\Http\Controllers;
 
 
-use Codex\Addon\Auth\Contracts\Auth;
 use Codex\Exception\CodexHttpException;
 
 class AuthController extends \Codex\Http\Controller
@@ -26,6 +25,11 @@ class AuthController extends \Codex\Http\Controller
         $this->validateDriver($driver);
         $this->codex->auth->callback($driver);
         return redirect()->route('codex.index');
+    }
+
+    public function getProtected()
+    {
+        return response(view('codex-auth::protected')->render(), 403);
     }
 
 

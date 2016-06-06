@@ -10,3 +10,5 @@
 Route::get('{driver}/login', ['as' => 'login', 'uses' => 'AuthController@redirectToProvider']);
 Route::get('{driver}/callback', ['as' => 'login.callback', 'uses' => 'AuthController@handleProviderCallback']);
 Route::get('{driver}/logout', ['as' => 'logout', 'uses' => 'AuthController@logoutProvider']);
+
+Route::get('protected', ['as' => 'protected', 'uses' => 'AuthController@getProtected']);

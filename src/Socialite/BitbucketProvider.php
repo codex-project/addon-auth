@@ -4,7 +4,6 @@ namespace Codex\Addon\Auth\Socialite;
 use Exception;
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
-use Laravel\Socialite\Two\User;
 
 class BitbucketProvider extends AbstractProvider implements ProviderInterface
 {

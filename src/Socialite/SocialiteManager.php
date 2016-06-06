@@ -36,7 +36,7 @@ class SocialiteManager extends \Laravel\Socialite\SocialiteManager
         }
         else
         {
-            $config[ 'callback_uri' ] = $uri;
+            $config[ 'redirect' ] = $uri;
         }
         return $config;
     }

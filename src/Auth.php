@@ -41,8 +41,14 @@ class Auth
 
     public function callback($driverName)
     {
+
         $user = $this->user($driverName);
-        session()->set("codex.auth.logins.{$driverName}", $user);
+        session()->set("codex.auth.logins.{$driverName}", $user->toArray());
+    }
+
+    public function getDrivers()
+    {
+        return config('codex-auth.drivers', []);
     }
 
     /**
@@ -72,12 +78,15 @@ class Auth
      */
     public function getUser($driverName)
     {
-        return session()->get("codex.auth.logins.{$driverName}");
+        $data = session()->get("codex.auth.logins.{$driverName}");
+        $user = new User();
+        $user->map($data);
+        return $user;
     }
 
-    public function isLoggedIn($driverName)
+    public function isLoggedIn($driverName = null)
     {
-        return session()->has("codex.auth.logins.{$driverName}");
+        return $driverName === null ? count(session()->get('codex.auth.logins', [ ])) > 0 : session()->has("codex.auth.logins.{$driverName}");
     }
 
     public function hasAccess(Project $project)

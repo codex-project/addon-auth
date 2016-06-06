@@ -1,12 +1,15 @@
 <?php
 namespace Codex\Addon\Auth\Socialite;
 
+use Exception;
+
 class GithubProvider extends \Laravel\Socialite\Two\GithubProvider
 {
     protected function getUserByToken($token)
     {
         $user             = parent::getUserByToken($token);
         $user[ 'groups' ] = $this->getGroupsByToken($token, $user[ 'login' ]);
+        return $user;
     }
 
     protected function getGroupsByToken($token, $username)
