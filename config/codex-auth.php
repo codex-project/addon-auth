@@ -8,8 +8,7 @@ return [
 
     'drivers' => [ 'github', 'bitbucket' ],
 
-    'error-page' => [
-        'view'  => 'codex-auth::protected',
+    'error' => [
         'title' => 'Access denied',
         'text'  => 'This project is not public and requires authorization',
     ],

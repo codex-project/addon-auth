@@ -26,7 +26,12 @@ class AuthHooks
             return;
         }
         if($codex->auth->hasAccess($project) === false){
-            return response()->redirectToRoute('codex.auth.protected');
+            return $codex->error(
+                config('codex-auth.error.title'),
+                config('codex-auth.error.text'),
+                403,
+                2
+            );
         }
     }
 
