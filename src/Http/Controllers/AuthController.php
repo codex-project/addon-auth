@@ -24,7 +24,7 @@ class AuthController extends \Codex\Http\Controller
     {
         $this->validateDriver($driver);
         $this->codex->auth->callback($driver);
-        return redirect()->route('codex.index');
+        return view('codex-auth::callback');
     }
 
     public function getProtected()
