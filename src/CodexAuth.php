@@ -6,17 +6,20 @@ use Codex\Contracts\Codex;
 use Codex\Projects\Project;
 use Laravel\Socialite\Contracts\Factory;
 
-class Auth
+class CodexAuth
 {
     protected $users = [ ];
 
+    /** @var \Laravel\Socialite\Contracts\Factory|\Laravel\Socialite\SocialiteManager  */
     protected $social;
 
+    /** @var \Codex\Contracts\Codex  */
     protected $codex;
 
     /**
      * Auth constructor.
      *
+     * @param \Codex\Contracts\Codex                                                   $parent
      * @param \Laravel\Socialite\Contracts\Factory|\Laravel\Socialite\SocialiteManager $social
      */
     public function __construct(Codex $parent, Factory $social)
@@ -48,7 +51,7 @@ class Auth
 
     public function getDrivers()
     {
-        return config('codex-auth.drivers', []);
+        return config('codex-auth.drivers', [ ]);
     }
 
     /**
