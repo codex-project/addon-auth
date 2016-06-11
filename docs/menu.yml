@@ -1,4 +1,9 @@
 menu:
-  - name: Overview
+  - name: Getting started
     icon: fa fa-eye
-    document: index
+    children:
+      - name: Overview
+        document: index
+
+      - name: API Documentation
+        document: phpdoc

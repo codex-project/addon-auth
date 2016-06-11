@@ -1,6 +1,6 @@
 <!---
-title: Overview
-author: Sebwite
+title: Auth
+subtitle: Codex Addon
 -->
 
 ## Quick Installation
@@ -8,6 +8,6 @@ author: Sebwite
 Begin by installing the package through Composer.
 
 ```bash
-composer require codex/auth-hook
+composer require codex/addon-auth
 ```
 
