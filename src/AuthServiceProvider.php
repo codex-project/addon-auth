@@ -26,6 +26,16 @@ class AuthServiceProvider extends ServiceProvider
         Socialite\SocialiteServiceProvider::class,
     ];
 
+    protected $codexTheme = [
+        'stylesheets' => [
+            ['auth', 'vendor/codex-auth/styles/auth']
+        ],
+        'bodyClass' => 'codex-auth',
+        'stack' => [
+            'header' => ['auth.header-auth-menu']
+        ]
+    ];
+
 
     public function boot()
     {

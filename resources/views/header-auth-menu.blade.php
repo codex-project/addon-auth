@@ -3,7 +3,7 @@
             <a class="dropdown-toggle" type="button" id="header-dropdown-auth" data-toggle="dropdown" aria-expanded="true">
                 Account <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="header-dropdown-auth">
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="header-dropdown-auth">
                 @foreach(codex('auth')->getDrivers() as $driver)
                     @if(codex('auth')->isLoggedIn($driver) === false)
                         <li role="presentation">

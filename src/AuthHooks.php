@@ -87,34 +87,7 @@ class AuthHooks
     }
 
 
-    /**
-     * @Hook("menu:render")
-     * @param \Codex\Menus\Menu $menu
-     * @param \Codex\Menus\Node $root
-     * @param                   $sorter
-     */
-    public function menuRender(Menu $menu, Node $root, $sorter)
-    {
-        if ( $menu->getId() === 'auth' && $menu->attr('resolved', false) !== true ) {
-            $auth = codex()->auth;
-
-            foreach ( $auth->getDrivers() as $driver ) {
-                if ( $auth->isLoggedIn($driver) === false ) {
-                    $node = $menu->add('auth-login-' . $driver, 'Login to ' . ucfirst($driver));
-                    $node->setAttribute('href', route('codex.auth.login', $driver));
-                }
-            }
-
-            foreach ( $auth->getDrivers() as $driver ) {
-                if ( $auth->isLoggedIn($driver) === true ) {
-                    $node = $menu->add('auth-logout-' . $driver, 'Logout from ' . ucfirst($driver));
-                    $node->setAttribute('href', route('codex.auth.logout', $driver));
-                }
-            }
-            $menu->setAttribute('resolved', true);
-        }
-    }
-
+    
     protected function hasEnabledAuth(Project $project)
     {
         return $project->config('auth.enabled', false) === true;
