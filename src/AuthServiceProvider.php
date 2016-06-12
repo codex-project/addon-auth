@@ -44,7 +44,7 @@ class AuthServiceProvider extends ServiceProvider
             ->theme
             ->addStylesheet('auth', 'vendor/codex-auth/styles/auth')
             ->addBodyClass('codex-auth');
-        $this->codex()->pushToStack('header', $this->codexView('auth.header-auth-menu'));
+        $this->codex()->pushToStack('nav', $this->codexView('auth.header-auth-menu'));
         return $app;
     }
 
@@ -54,7 +54,7 @@ class AuthServiceProvider extends ServiceProvider
         $menu->setAttribute('title', 'Auth');
         $menu->setAttribute('subtitle', 'Auth');
         $menu->setView($this->codex()->view('menus.auth'));
-        $this->codex()->pushToStack('header', $this->codexView('auth.header-auth-menu'));
+        $this->codex()->pushToStack('nav', $this->codexView('auth.header-auth-menu'));
     }
 
     public function register()
