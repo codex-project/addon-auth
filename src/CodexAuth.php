@@ -98,7 +98,7 @@ class CodexAuth
         {
             return true;
         }
-        $driverName = $project->config('auth.driver');
+        $driverName = $project->config('auth.driver', config('codex-auth.default_driver'));
         if ( !$this->isLoggedIn($driverName) )
         {
             return false;

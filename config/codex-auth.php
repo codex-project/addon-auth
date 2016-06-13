@@ -8,6 +8,8 @@ return [
 
     'drivers' => [ 'github', 'bitbucket' ],
 
+    'default_driver' => 'bitbucket',
+
     'error' => [
         'title' => 'Access denied',
         'text'  => 'This project is not public and requires authorization',
