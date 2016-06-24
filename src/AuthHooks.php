@@ -6,7 +6,6 @@ use Codex\Contracts\Codex;
 use Codex\Contracts\Projects\Projects;
 use Codex\Documents\Document;
 use Codex\Http\Controllers\CodexController;
-use Codex\Menus\Menu;
 use Codex\Menus\Node;
 use Codex\Projects\Project;
 
@@ -25,10 +24,12 @@ class AuthHooks
      */
     public function controllerDocument(CodexController $controller, Document $document, Codex $codex, Project $project)
     {
-        if ( false === $this->hasEnabledAuth($project) ) {
+        if ( false === $this->hasEnabledAuth($project) )
+        {
             return;
         }
-        if ( $codex->auth->hasAccess($project) === false ) {
+        if ( $codex->auth->hasAccess($project) === false )
+        {
             return $codex->error(
                 config('codex-auth.error.title'),
                 config('codex-auth.error.text'),
@@ -49,11 +50,18 @@ class AuthHooks
      */
     public function projectsResolvedNode(Projects $projects, Project $project, Node $node)
     {
-        if ( false === $this->hasEnabledAuth($project) ) {
+        if ( false === $this->hasEnabledAuth($project) )
+        {
             return;
         }
-        if ( false === $project->hasAccess() ) {
+        if ( false === $project->hasAccess() )
+        {
             $node->setMeta('hidden', true);
+            // if all neighbors are hidden, hide the parent as well
+            if ( $node->hasParent() && $node->neighbors()->where('meta.hidden', true)->count() === count($node->getNeighbors()))
+            {
+                $node->getParent()->setMeta('hidden', true);
+            }
         }
     }
 
@@ -72,14 +80,18 @@ class AuthHooks
      */
     public function projectConstructed(Project $project)
     {
-        $project->extend('hasEnabledAuth', function () use ($project) {
+        $project->extend('hasEnabledAuth', function () use ($project)
+        {
             return $project->config('auth.enabled', false) === true;
         });
-        $project->extend('hasAccess', function () use ($project) {
-            if ( false === $project->hasEnabledAuth() ) {
+        $project->extend('hasAccess', function () use ($project)
+        {
+            if ( false === $project->hasEnabledAuth() )
+            {
                 return true;
             }
-            if ( $project->getCodex()->auth->hasAccess($project) ) {
+            if ( $project->getCodex()->auth->hasAccess($project) )
+            {
                 return true;
             }
             return false;
@@ -87,7 +99,6 @@ class AuthHooks
     }
 
 
-    
     protected function hasEnabledAuth(Project $project)
     {
         return $project->config('auth.enabled', false) === true;
