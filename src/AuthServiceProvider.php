@@ -1,6 +1,7 @@
 <?php
 namespace Codex\Addon\Auth;
 
+use Codex\Contracts\Traits\Extendable;
 use Codex\Traits\CodexProviderTrait;
 use Sebwite\Support\ServiceProvider;
 
@@ -21,8 +22,6 @@ class AuthServiceProvider extends ServiceProvider
     ];
 
     protected $providers = [
-        \Laravel\Socialite\SocialiteServiceProvider::class,
-        Http\HttpServiceProvider::class,
         Socialite\SocialiteServiceProvider::class,
     ];
 
@@ -35,6 +34,26 @@ class AuthServiceProvider extends ServiceProvider
             'header' => ['auth.header-auth-menu']
         ]
     ];
+
+    protected function registerHttp()
+    {
+        $this->codexIgnoreRoute('auth');
+        $this->app->register(Http\HttpServiceProvider::class);
+    }
+
+    protected function registerViews()
+    {
+        $this->codexView('menus.auth', 'codex::menus.header-dropdown');
+        $this->codexView('auth.header-auth-menu', 'codex-auth::header-auth-menu');
+    }
+
+    protected function registerCodexExtension()
+    {
+        $this->codexHook('constructed', function (Extendable $codex)
+        {
+            $codex->extend('auth', CodexAuth::class);
+        });
+    }
 
 
     public function boot()
@@ -60,9 +79,9 @@ class AuthServiceProvider extends ServiceProvider
     public function register()
     {
         $app = parent::register();
-        $this->codexIgnoreRoute('auth');
-        $this->codexView('menus.auth', 'codex::menus.header-dropdown');
-        $this->codexView('auth.header-auth-menu', 'codex-auth::header-auth-menu');
+        $this->registerHttp();
+        $this->registerViews();
+        $this->registerCodexExtension();
         return $app;
     }
 
