@@ -17,7 +17,7 @@ class AuthHooks
      *
      * @param \Codex\Http\Controllers\CodexController $controller
      * @param \Codex\Documents\Document               $document
-     * @param \Codex\Codex|\Codex\Contracts\Codex     $codex
+     * @param \Codex\Codex     $codex
      * @param \Codex\Projects\Project                 $project
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response|void
