@@ -2,7 +2,7 @@
 namespace Codex\Addon\Auth;
 
 use Codex\Addons\Annotations\Hook;
-use Codex\Contracts\Codex;
+use Codex\Codex;
 use Codex\Contracts\Projects\Projects;
 use Codex\Documents\Document;
 use Codex\Http\Controllers\CodexController;

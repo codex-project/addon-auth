@@ -2,7 +2,7 @@
 namespace Codex\Addon\Auth;
 
 use Codex\Addon\Auth\Socialite\User;
-use Codex\Contracts\Codex;
+use Codex\Codex;
 use Codex\Projects\Project;
 use Laravel\Socialite\Contracts\Factory;
 
