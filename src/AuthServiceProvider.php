@@ -1,6 +1,7 @@
 <?php
 namespace Codex\Addon\Auth;
 
+use Codex\Codex;
 use Codex\Contracts\Traits\Extendable;
 use Codex\Traits\CodexProviderTrait;
 use Sebwite\Support\ServiceProvider;
@@ -47,13 +48,6 @@ class AuthServiceProvider extends ServiceProvider
         $this->codexView('auth.header-auth-menu', 'codex-auth::header-auth-menu');
     }
 
-    protected function registerCodexExtension()
-    {
-        $this->codexHook('constructed', function (Extendable $codex)
-        {
-            $codex->extend('auth', CodexAuth::class);
-        });
-    }
 
 
     public function boot()
@@ -81,7 +75,7 @@ class AuthServiceProvider extends ServiceProvider
         $app = parent::register();
         $this->registerHttp();
         $this->registerViews();
-        $this->registerCodexExtension();
+        Codex::extend('auth', CodexAuth::class);
         return $app;
     }
 
