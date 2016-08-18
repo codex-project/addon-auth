@@ -4,7 +4,7 @@ namespace Codex\Addon\Auth;
 use Codex\Codex;
 use Codex\Contracts\Traits\Extendable;
 use Codex\Traits\CodexProviderTrait;
-use Sebwite\Support\ServiceProvider;
+use Laradic\ServiceProvider\ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
