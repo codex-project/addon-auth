@@ -86,7 +86,7 @@ class AuthPlugin extends BasePlugin
             ->theme
             ->addStylesheet('auth', 'vendor/codex-auth/styles/auth')
             ->addBodyClass('codex-auth');
-        $this->codex()->theme->pushToStack('nav', $this->view('auth.header-auth-menu'));
+        //$this->codex()->theme->pushToStack('nav', $this->view('auth.header-auth-menu'));
     }
 
 }
