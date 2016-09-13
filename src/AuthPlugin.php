@@ -77,7 +77,7 @@ class AuthPlugin extends BasePlugin
         $menu->setAttribute('title', 'Auth');
         $menu->setAttribute('subtitle', 'Auth');
         $menu->setView($this->codex()->view('menus.auth'));
-        $this->codex()->theme->pushToStack('nav', $this->view('auth.header-auth-menu'));
+        $this->codex()->theme->pushViewToStack('nav', $this->view('auth.header-auth-menu'));
     }
 
     protected function bootTheme()
