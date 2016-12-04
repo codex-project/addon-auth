@@ -77,15 +77,15 @@ class AuthPlugin extends BasePlugin
         $menu->setAttribute('title', 'Auth');
         $menu->setAttribute('subtitle', 'Auth');
         $menu->setView($this->codex()->view('menus.auth'));
-        $this->codex()->theme->pushViewToStack('nav', $this->view('auth.header-auth-menu'));
+//        $this->codex()->theme->pushViewToStack('nav', $this->view('auth.header-auth-menu'));
     }
 
     protected function bootTheme()
     {
         $this->codex()
             ->theme
-            ->addStylesheet('auth', 'vendor/codex-auth/styles/auth')
-            ->addBodyClass('codex-auth');
+            ->addStylesheet('auth', 'vendor/codex-auth/styles/auth');
+//            ->addBodyClass('codex-auth');
         //$this->codex()->theme->pushToStack('nav', $this->view('auth.header-auth-menu'));
     }
 

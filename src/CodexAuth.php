@@ -13,7 +13,7 @@ class CodexAuth
     /** @var \Laravel\Socialite\Contracts\Factory|\Laravel\Socialite\SocialiteManager  */
     protected $social;
 
-    /** @var \Codex\Contracts\Codex  */
+    /** @var \Codex\Codex  */
     protected $codex;
 
     /**
