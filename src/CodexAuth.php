@@ -49,6 +49,11 @@ class CodexAuth
         session()->set("codex.auth.logins.{$driverName}", $user->toArray());
     }
 
+
+    /**
+     * getDrivers method
+     * @return string[]
+     */
     public function getDrivers()
     {
         return config('codex-auth.drivers', [ ]);

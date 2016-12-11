@@ -28,11 +28,9 @@ class AuthPlugin extends BasePlugin
 
     # BasePlugin
     protected $views = [
-        'menus.auth'            => 'codex::menus.header-dropdown',
-        'auth.header-auth-menu' => 'codex-auth::header-auth-menu'
+        'menus.auth'            => 'codex-auth::menus.header',
+        'auth.header-menu' => 'codex-auth::header-auth-menu'
     ];
-
-    protected $routeExclusions = [ 'phpdoc' ];
 
     # ServiceProvider
     protected $configFiles = [ 'codex-auth' ];
@@ -73,11 +71,9 @@ class AuthPlugin extends BasePlugin
 
     protected function bootMenu()
     {
-        $menu = $this->codex()->menus->add('auth');
-        $menu->setAttribute('title', 'Auth');
-        $menu->setAttribute('subtitle', 'Auth');
-        $menu->setView($this->codex()->view('menus.auth'));
-//        $this->codex()->theme->pushViewToStack('nav', $this->view('auth.header-auth-menu'));
+        $this->hook('controller:document', function(){
+            $this->codex()->theme->pushViewToStack('nav', $this->view('document'), $this->view('auth.header-menu'));
+        });
     }
 
     protected function bootTheme()

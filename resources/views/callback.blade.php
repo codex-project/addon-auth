@@ -1,20 +1,10 @@
-@extends(codex()->view('layouts.base'))
-
-@push('header')
-@section('menu-projects')
-    {!! $codex->projects->renderMenu() !!}
-@show
-@endpush
+@extends(codex()->view('layouts.default'))
 
 
-@section('content')
-<div class="text-center">
+@section('body')
+<div class="text-sm-center">
     <h1>Success</h1>
     <p>You are now logged in</p>
-    <a href="{{ route('codex.index') }}">Continue</a>
+    <a href="{{ route('codex.document') }}">Continue</a>
 </div>
-@stop
-
-@section('breadcrumb')
-
 @stop
