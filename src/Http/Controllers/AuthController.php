@@ -4,7 +4,7 @@ namespace Codex\Addon\Auth\Http\Controllers;
 
 use Codex\Exception\CodexHttpException;
 
-class AuthController extends \Codex\Http\Controllers\Controller
+class AuthCodexController extends \Codex\Http\Controllers\CodexController
 {
 
     public function redirectToProvider($driver)

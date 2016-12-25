@@ -5,7 +5,7 @@ use Codex\Addons\Annotations\Hook;
 use Codex\Codex;
 use Codex\Contracts\Projects\Projects;
 use Codex\Documents\Document;
-use Codex\Http\Controllers\CodexController;
+use Codex\Http\Controllers\CodexDocumentController;
 use Codex\Menus\Node;
 use Codex\Projects\Project;
 
@@ -15,14 +15,14 @@ class AuthHooks
      * controllerDocument method
      * @Hook("controller:document")
      *
-     * @param \Codex\Http\Controllers\CodexController $controller
-     * @param \Codex\Documents\Document               $document
-     * @param \Codex\Codex     $codex
-     * @param \Codex\Projects\Project                 $project
+     * @param \Codex\Http\Controllers\CodexDocumentController $controller
+     * @param \Codex\Documents\Document                       $document
+     * @param \Codex\Codex                                    $codex
+     * @param \Codex\Projects\Project                         $project
      *
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response|void
      */
-    public function controllerDocument(CodexController $controller, Document $document, Codex $codex, Project $project)
+    public function controllerDocument(CodexDocumentController $controller, Document $document, Codex $codex, Project $project)
     {
         if ( false === $this->hasEnabledAuth($project) )
         {
