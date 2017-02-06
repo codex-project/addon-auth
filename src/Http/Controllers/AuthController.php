@@ -4,16 +4,16 @@
  *
  * License and copyright information bundled with this package in the LICENSE file.
  *
- * @author    Robin Radic
- * @copyright Copyright 2016 (c) Codex Project
- * @license   http://codex-project.ninja/license The MIT License
+ * @author Robin Radic
+ * @copyright Copyright 2017 (c) Codex Project
+ * @license http://codex-project.ninja/license The MIT License
  */
 namespace Codex\Addon\Auth\Http\Controllers;
 
 
 use Codex\Exception\CodexHttpException;
 
-class AuthCodexController extends \Codex\Http\Controllers\CodexController
+class AuthController extends \Codex\Http\Controllers\CodexController
 {
 
     public function redirectToProvider($driver)
